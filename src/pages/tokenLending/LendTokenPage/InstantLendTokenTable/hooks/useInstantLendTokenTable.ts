@@ -1,5 +1,6 @@
-import { core } from '@coopfi/api/tokens'
 import { first, groupBy, map } from 'lodash'
+
+import { core } from '@coopfi/api/tokens'
 
 import { useAllTokenLoansRequests } from './useAllTokenLoansRequests'
 import { useFilterLoans } from './useFilterLoans'

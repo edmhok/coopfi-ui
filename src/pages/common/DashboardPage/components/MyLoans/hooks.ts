@@ -1,12 +1,14 @@
+import { every, map } from 'lodash'
+import { useNavigate } from 'react-router-dom'
+
 import { DoughnutChartProps } from '@coopfi/components/Charts'
 import { VALUES_TYPES } from '@coopfi/components/StatInfo'
+
 import { useBorrowerStats } from '@coopfi/pages/common/DashboardPage/hooks'
 import { PATHS } from '@coopfi/router'
 import { buildUrlWithModeAndToken } from '@coopfi/store'
 import { useAssetMode, useTokenType } from '@coopfi/store/common'
 import { isBanxSolTokenType } from '@coopfi/utils'
-import { every, map } from 'lodash'
-import { useNavigate } from 'react-router-dom'
 
 import {
   LoansStatus,

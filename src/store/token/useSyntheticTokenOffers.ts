@@ -1,10 +1,11 @@
-import { convertBondOfferV3ToCore } from '@coopfi/api/nft'
-import { ZERO_BN, calculateIdleFundsInOffer } from '@coopfi/utils'
 import { BN, web3 } from 'fbonds-core'
 import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
 import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
 import produce from 'immer'
 import { create } from 'zustand'
+
+import { convertBondOfferV3ToCore } from '@coopfi/api/nft'
+import { ZERO_BN, calculateIdleFundsInOffer } from '@coopfi/utils'
 
 export interface SyntheticTokenOffer {
   isEdit: boolean //? if offer exits on blochain and in edit mode

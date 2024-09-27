@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react'
 
-import { core } from '@coopfi/api/tokens'
-import { SortOption } from '@coopfi/components/SortDropdown'
-import { calculateTokenLoanLtvByLoanValue } from '@coopfi/utils'
 import { orderBy } from 'lodash'
+
+import { SortOption } from '@coopfi/components/SortDropdown'
+
+import { core } from '@coopfi/api/tokens'
+import { calculateTokenLoanLtvByLoanValue } from '@coopfi/utils'
 
 import { calculateLendToBorrowValue } from '../helpers'
 

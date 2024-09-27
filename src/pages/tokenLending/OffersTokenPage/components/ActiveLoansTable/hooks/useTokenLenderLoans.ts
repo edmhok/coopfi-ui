@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
 
-import { core, fetchTokenLenderLoans } from '@coopfi/api/tokens'
-import { useTokenType } from '@coopfi/store/common'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
 import produce from 'immer'
 import { chain, maxBy } from 'lodash'
 import { create } from 'zustand'
+
+import { core, fetchTokenLenderLoans } from '@coopfi/api/tokens'
+import { useTokenType } from '@coopfi/store/common'
 
 import { useTokenLenderLoansOptimistic } from './useTokenLenderLoansOptimistic'
 

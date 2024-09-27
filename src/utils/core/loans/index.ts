@@ -1,3 +1,13 @@
+import { BN } from 'fbonds-core'
+import { BASE_POINTS, SECONDS_IN_DAY } from 'fbonds-core/lib/fbond-protocol/constants'
+import {
+  calculateCurrentInterestSolPure,
+  calculateDynamicApr,
+  calculateLenderPartialPartFromBorrower,
+} from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
+import { BondTradeTransactionV2State, LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+import moment from 'moment'
+
 import { core } from '@coopfi/api/nft'
 import {
   BONDS,
@@ -9,15 +19,6 @@ import {
 } from '@coopfi/constants'
 import { SOLANA_RENT_FEE_BORROW_AMOUNT_IMPACT } from '@coopfi/utils'
 import { ZERO_BN } from '@coopfi/utils/bn'
-import { BN } from 'fbonds-core'
-import { BASE_POINTS, SECONDS_IN_DAY } from 'fbonds-core/lib/fbond-protocol/constants'
-import {
-  calculateCurrentInterestSolPure,
-  calculateDynamicApr,
-  calculateLenderPartialPartFromBorrower,
-} from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
-import { BondTradeTransactionV2State, LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
-import moment from 'moment'
 
 export enum LoanStatus {
   Active = 'active',

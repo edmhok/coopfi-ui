@@ -1,10 +1,15 @@
-import { core } from '@coopfi/api/nft'
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { chain, uniqueId } from 'lodash'
+import { TxnExecutor } from 'solana-transactions-executor'
+
 import { useBanxNotificationsSider } from '@coopfi/components/BanxNotifications'
 import {
   SubscribeNotificationsModal,
   createRefinanceSubscribeNotificationsContent,
   createRefinanceSubscribeNotificationsTitle,
 } from '@coopfi/components/modals'
+
+import { core } from '@coopfi/api/nft'
 import { getDialectAccessToken } from '@coopfi/providers'
 import { useIsLedger, useModal, useTokenType } from '@coopfi/store/common'
 import {
@@ -26,9 +31,6 @@ import {
   enqueueWaitingConfirmation,
   isLoanListed,
 } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { chain, uniqueId } from 'lodash'
-import { TxnExecutor } from 'solana-transactions-executor'
 
 import { useAllLoansRequests } from '../../hooks'
 import { useLoansState } from '../loansState'

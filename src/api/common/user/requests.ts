@@ -1,6 +1,7 @@
-import { BACKEND_BASE_URL } from '@coopfi/constants'
 import axios from 'axios'
 import { web3 } from 'fbonds-core'
+
+import { BACKEND_BASE_URL } from '@coopfi/constants'
 
 import { MutationResponse, RequestWithPagination, parseResponseSafe } from '../../shared'
 import { getDiscordAvatarUrl } from './helpers'

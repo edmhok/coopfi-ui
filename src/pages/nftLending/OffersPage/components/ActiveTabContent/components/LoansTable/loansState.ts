@@ -1,6 +1,7 @@
-import { core } from '@coopfi/api/nft'
 import produce from 'immer'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/nft'
 
 export interface LoanOptimistic {
   loan: core.Loan

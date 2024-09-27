@@ -1,3 +1,9 @@
+import { WalletContextState } from '@solana/wallet-adapter-react'
+import { web3 } from 'fbonds-core'
+import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+import { chain, groupBy, sumBy, uniqueId } from 'lodash'
+import { TxnExecutor } from 'solana-transactions-executor'
+
 import { core } from '@coopfi/api/nft'
 import { LoansOptimisticStore, OffersOptimisticStore } from '@coopfi/store/nft'
 import {
@@ -19,11 +25,6 @@ import {
   matchNftsAndOffers,
   offerNeedsReservesOptimizationOnBorrow,
 } from '@coopfi/utils'
-import { WalletContextState } from '@solana/wallet-adapter-react'
-import { web3 } from 'fbonds-core'
-import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
-import { chain, groupBy, sumBy, uniqueId } from 'lodash'
-import { TxnExecutor } from 'solana-transactions-executor'
 
 import { TableNftData } from './types'
 

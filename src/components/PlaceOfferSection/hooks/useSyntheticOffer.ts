@@ -1,8 +1,9 @@
 import { useMemo } from 'react'
 
-import { createEmptySyntheticOffer, useSyntheticOffers } from '@coopfi/store/nft'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { web3 } from 'fbonds-core'
+
+import { createEmptySyntheticOffer, useSyntheticOffers } from '@coopfi/store/nft'
 
 export const useSyntheticOffer = (offerPubkey: string, marketPubkey: string) => {
   const { publicKey: walletPubkey } = useWallet()

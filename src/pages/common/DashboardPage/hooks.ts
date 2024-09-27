@@ -1,8 +1,9 @@
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useQuery } from '@tanstack/react-query'
+
 import { AssetType, stats } from '@coopfi/api/nft'
 import { AssetMode, useAssetMode, useTokenType } from '@coopfi/store/common'
 import { isBanxSolTokenType } from '@coopfi/utils'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useQuery } from '@tanstack/react-query'
 
 const QUERY_OPTIONS = {
   staleTime: 60 * 1000,

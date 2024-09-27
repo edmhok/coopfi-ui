@@ -1,7 +1,8 @@
-import { activity } from '@coopfi/api/nft'
-import { useTokenType } from '@coopfi/store/common'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
+
+import { activity } from '@coopfi/api/nft'
+import { useTokenType } from '@coopfi/store/common'
 
 export const useBorrowerActivityCollectionsList = () => {
   const { publicKey } = useWallet()

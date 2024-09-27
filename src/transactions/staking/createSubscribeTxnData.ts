@@ -1,8 +1,9 @@
-import { BONDS } from '@coopfi/constants'
 import { web3 } from '@project-serum/anchor'
 import { BN } from 'fbonds-core'
 import { subscribeBanxAdventure } from 'fbonds-core/lib/fbond-protocol/functions/banxStaking/banxAdventure'
 import { CreateTxnData, WalletAndConnection } from 'solana-transactions-executor'
+
+import { BONDS } from '@coopfi/constants'
 
 import { sendTxnPlaceHolder } from '../helpers'
 

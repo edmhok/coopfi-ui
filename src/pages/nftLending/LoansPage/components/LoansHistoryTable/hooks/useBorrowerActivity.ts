@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react'
 
-import { activity } from '@coopfi/api/nft'
-import { SortOption } from '@coopfi/components/SortDropdown'
-import { createGlobalState } from '@coopfi/store'
-import { useTokenType } from '@coopfi/store/common'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useInfiniteQuery } from '@tanstack/react-query'
+
+import { SortOption } from '@coopfi/components/SortDropdown'
+
+import { activity } from '@coopfi/api/nft'
+import { createGlobalState } from '@coopfi/store'
+import { useTokenType } from '@coopfi/store/common'
 
 const PAGINATION_LIMIT = 15
 

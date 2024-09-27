@@ -1,9 +1,10 @@
-import { SyntheticTokenOffer } from '@coopfi/store/token'
-import { getTokenTicker, stringToBN } from '@coopfi/utils'
 import { BN } from 'fbonds-core'
 import { MIN_APR_SPL } from 'fbonds-core/lib/fbond-protocol/constants'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
 import { chain } from 'lodash'
+
+import { SyntheticTokenOffer } from '@coopfi/store/token'
+import { getTokenTicker, stringToBN } from '@coopfi/utils'
 
 type GetErrorMessage = (props: {
   walletBalance: number

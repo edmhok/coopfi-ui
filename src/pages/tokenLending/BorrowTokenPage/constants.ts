@@ -1,5 +1,6 @@
-import { core } from '@coopfi/api/tokens'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+
+import { core } from '@coopfi/api/tokens'
 
 export interface BorrowToken {
   collateral: core.TokenMeta

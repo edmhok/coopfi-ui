@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import { CollateralToken, core } from '@coopfi/api/tokens'
-import { useDebounceValue } from '@coopfi/hooks'
-import { useTokenType } from '@coopfi/store/common'
-import { getTokenDecimals, stringToBN } from '@coopfi/utils'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
 import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
 import { getBondingCurveTypeFromLendingToken } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
+
+import { CollateralToken, core } from '@coopfi/api/tokens'
+import { useDebounceValue } from '@coopfi/hooks'
+import { useTokenType } from '@coopfi/store/common'
+import { getTokenDecimals, stringToBN } from '@coopfi/utils'
 
 import { BorrowToken } from '../../constants'
 import { getUpdatedBorrowOffers } from '../OrderBook/helpers'

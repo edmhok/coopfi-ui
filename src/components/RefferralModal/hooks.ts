@@ -1,5 +1,6 @@
-import { user } from '@coopfi/api/common'
 import { useQuery } from '@tanstack/react-query'
+
+import { user } from '@coopfi/api/common'
 
 export const useGetUserWalletByRefCode = (refCode: string) => {
   const { data, isLoading } = useQuery(

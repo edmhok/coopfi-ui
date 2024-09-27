@@ -1,3 +1,6 @@
+import { BondFeatures, BondingCurveType, PairState } from 'fbonds-core/lib/fbond-protocol/types'
+import { z } from 'zod'
+
 import {
   BondTradeTransactionSchema,
   FraktBondSchema,
@@ -7,8 +10,6 @@ import {
   StringIntSchema,
   StringPublicKeySchema,
 } from '@coopfi/api/shared'
-import { BondFeatures, BondingCurveType, PairState } from 'fbonds-core/lib/fbond-protocol/types'
-import { z } from 'zod'
 
 import { MarketCategory } from './types'
 

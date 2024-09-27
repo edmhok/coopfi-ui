@@ -1,3 +1,9 @@
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { BondTradeTransactionV2State } from 'fbonds-core/lib/fbond-protocol/types'
+import { uniqueId } from 'lodash'
+import moment from 'moment'
+import { TxnExecutor } from 'solana-transactions-executor'
+
 import { core } from '@coopfi/api/nft'
 import { useIsLedger } from '@coopfi/store/common'
 import { useLoansRequestsOptimistic } from '@coopfi/store/nft'
@@ -15,11 +21,6 @@ import {
   enqueueTransactionsSent,
   enqueueWaitingConfirmation,
 } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { BondTradeTransactionV2State } from 'fbonds-core/lib/fbond-protocol/types'
-import { uniqueId } from 'lodash'
-import moment from 'moment'
-import { TxnExecutor } from 'solana-transactions-executor'
 
 import { useSelectedLoans } from '../loansState'
 

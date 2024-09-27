@@ -1,12 +1,14 @@
-import { core } from '@coopfi/api/nft'
+import { useWallet } from '@solana/wallet-adapter-react'
+import { first, groupBy, map } from 'lodash'
+import { useNavigate } from 'react-router-dom'
+
 import { SearchSelectProps } from '@coopfi/components/SearchSelect'
+
+import { core } from '@coopfi/api/nft'
 import { ACTIVE_LOANS_TABLE_MESSAGES } from '@coopfi/pages/nftLending/LoansPage/constants'
 import { PATHS } from '@coopfi/router'
 import { buildUrlWithModeAndToken } from '@coopfi/store'
 import { AssetMode, useTokenType } from '@coopfi/store/common'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { first, groupBy, map } from 'lodash'
-import { useNavigate } from 'react-router-dom'
 
 import { useFilterLoans } from './useFilteredLoans'
 import { useSortLoans } from './useSortLoans'

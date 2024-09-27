@@ -1,9 +1,10 @@
-import { BANX_SOL_ADDRESS, BONDS, USDC_ADDRESS } from '@coopfi/constants'
-import { isBanxSolTokenType, isUsdcTokenType } from '@coopfi/utils'
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
 import { web3 } from 'fbonds-core'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+
+import { BANX_SOL_ADDRESS, BONDS, USDC_ADDRESS } from '@coopfi/constants'
+import { isBanxSolTokenType, isUsdcTokenType } from '@coopfi/utils'
 
 type UseNativeAccount = ({ isLive }: { isLive?: boolean }) => web3.AccountInfo<Buffer> | null
 const useNativeAccount: UseNativeAccount = ({ isLive = true }) => {

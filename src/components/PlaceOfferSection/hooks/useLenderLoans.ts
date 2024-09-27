@@ -1,10 +1,11 @@
 import { useMemo } from 'react'
 
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useQuery } from '@tanstack/react-query'
+
 import { core } from '@coopfi/api/nft'
 import { useTokenType } from '@coopfi/store/common'
 import { isLoanTerminating } from '@coopfi/utils'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useQuery } from '@tanstack/react-query'
 
 export const useLenderLoans = ({ offerPubkey }: { offerPubkey: string }) => {
   const { publicKey } = useWallet()

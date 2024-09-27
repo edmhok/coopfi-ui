@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
 
+import { filter, size } from 'lodash'
+
 import { core } from '@coopfi/api/tokens'
 import { createGlobalState } from '@coopfi/store'
 import { isTokenLoanFrozen, isTokenLoanListed } from '@coopfi/utils'
-import { filter, size } from 'lodash'
 
 const useCollectionsStore = createGlobalState<string[]>([])
 

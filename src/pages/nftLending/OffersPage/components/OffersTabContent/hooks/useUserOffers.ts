@@ -1,13 +1,14 @@
 import { useEffect, useMemo } from 'react'
 
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useQuery } from '@tanstack/react-query'
+import { chain, map, maxBy } from 'lodash'
+
 import { core } from '@coopfi/api/nft'
 import { useMarketsPreview } from '@coopfi/pages/nftLending/LendPage/hooks'
 import { useTokenType } from '@coopfi/store/common'
 import { isOfferNewer, isOptimisticOfferExpired, useOffersOptimistic } from '@coopfi/store/nft'
 import { isOfferClosed } from '@coopfi/utils'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useQuery } from '@tanstack/react-query'
-import { chain, map, maxBy } from 'lodash'
 
 export const useUserOffers = (props?: { refetchInterval?: number }) => {
   const { publicKey } = useWallet()

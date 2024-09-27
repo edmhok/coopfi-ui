@@ -1,11 +1,12 @@
 import { useEffect, useMemo } from 'react'
 
+import { chain } from 'lodash'
+
 import { core } from '@coopfi/api/nft'
 import { useWalletBalance } from '@coopfi/hooks'
 import { useTokenType } from '@coopfi/store/common'
 import { SyntheticOffer } from '@coopfi/store/nft'
 import { convertOffersToSimple, getTokenDecimals } from '@coopfi/utils'
-import { chain } from 'lodash'
 
 import { Mark } from '../PlaceOfferContent/components'
 import {

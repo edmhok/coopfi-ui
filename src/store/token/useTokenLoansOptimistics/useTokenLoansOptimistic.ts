@@ -1,10 +1,11 @@
 import { useEffect, useMemo } from 'react'
 
-import { core } from '@coopfi/api/tokens'
-import { useTokenType } from '@coopfi/store/common'
 import { get, set } from 'idb-keyval'
 import { map } from 'lodash'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/tokens'
+import { useTokenType } from '@coopfi/store/common'
 
 import {
   TokenLoanOptimistic,

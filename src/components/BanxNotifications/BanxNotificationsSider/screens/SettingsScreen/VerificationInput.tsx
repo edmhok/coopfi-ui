@@ -54,9 +54,9 @@ export const VerificationInput: FC<VerificationInputProps> = ({
     event.target.checkValidity()
       ? setCurrentError(null)
       : setCurrentError({
-        name: 'incorrectCode',
-        message: 'Please enter a valid code',
-      })
+          name: 'incorrectCode',
+          message: 'Please enter a valid code',
+        })
   }
 
   const onFocus = () => {

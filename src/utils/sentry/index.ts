@@ -1,7 +1,8 @@
-import { SENTRY } from '@coopfi/constants'
 import * as Sentry from '@sentry/browser'
 import { Dictionary } from 'lodash'
 import { TxnError } from 'solana-transactions-executor'
+
+import { SENTRY } from '@coopfi/constants'
 
 const IGNORE_ERRORS = [
   'Registration failed - push service error',

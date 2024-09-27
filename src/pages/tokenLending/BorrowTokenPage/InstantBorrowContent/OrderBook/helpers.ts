@@ -1,5 +1,6 @@
-import { BorrowOffer } from '@coopfi/api/tokens'
 import { BN } from 'fbonds-core'
+
+import { BorrowOffer } from '@coopfi/api/tokens'
 
 const calculateOfferFundingRatio = (offer: BorrowOffer, maxOffer: BorrowOffer) => {
   const offerFunds = parseFloat(offer.maxTokenToGet)

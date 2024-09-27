@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react'
 
-import { activity } from '@coopfi/api/nft'
-import { RBOption } from '@coopfi/components/RadioButton'
-import { useMarketsPreview } from '@coopfi/pages/nftLending/LendPage'
-import { useTokenType } from '@coopfi/store/common'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useInfiniteQuery } from '@tanstack/react-query'
+
+import { RBOption } from '@coopfi/components/RadioButton'
+
+import { activity } from '@coopfi/api/nft'
+import { useMarketsPreview } from '@coopfi/pages/nftLending/LendPage'
+import { useTokenType } from '@coopfi/store/common'
 
 import { ActivityEvent, RADIO_BUTTONS_OPTIONS } from './constants'
 import { appendIdToOptions } from './helpers'

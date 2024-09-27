@@ -1,5 +1,6 @@
-import { ResponseWithPagination } from '@coopfi/api/shared'
 import { z } from 'zod'
+
+import { ResponseWithPagination } from '@coopfi/api/shared'
 
 import {
   BorrowOfferSchema,

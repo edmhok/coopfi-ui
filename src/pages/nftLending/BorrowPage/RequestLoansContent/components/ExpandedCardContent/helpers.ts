@@ -1,8 +1,9 @@
-import { BONDS, ONE_WEEK_IN_SECONDS } from '@coopfi/constants'
-import { calculateBorrowValueWithProtocolFee } from '@coopfi/utils'
 import { calculateCurrentInterestSolPure } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import { clamp } from 'lodash'
 import moment from 'moment'
+
+import { BONDS, ONE_WEEK_IN_SECONDS } from '@coopfi/constants'
+import { calculateBorrowValueWithProtocolFee } from '@coopfi/utils'
 
 interface CalculateSummaryInfoProps {
   requestedLoanValue: number

@@ -1,8 +1,9 @@
-import { BONDS, MINUTES_IN_HOUR } from '@coopfi/constants'
-import { ZERO_BN } from '@coopfi/utils'
 import { BN, web3 } from 'fbonds-core'
 import { chain, sum } from 'lodash'
 import moment from 'moment'
+
+import { BONDS, MINUTES_IN_HOUR } from '@coopfi/constants'
+import { ZERO_BN } from '@coopfi/utils'
 
 const SAMPLE_HISTORY_HOURS_AMOUNT = 6
 

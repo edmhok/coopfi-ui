@@ -1,5 +1,13 @@
 import { useEffect, useMemo } from 'react'
 
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useQuery } from '@tanstack/react-query'
+import { BN } from 'fbonds-core'
+import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+import { produce } from 'immer'
+import { chain, filter, groupBy, isEmpty, map, maxBy, sortBy, sumBy, uniqBy } from 'lodash'
+import { create } from 'zustand'
+
 import { core } from '@coopfi/api/nft'
 import { useTokenType } from '@coopfi/store/common'
 import {
@@ -19,13 +27,6 @@ import {
   isLoanRepaid,
   isOfferStateClosed,
 } from '@coopfi/utils'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useQuery } from '@tanstack/react-query'
-import { BN } from 'fbonds-core'
-import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
-import { produce } from 'immer'
-import { chain, filter, groupBy, isEmpty, map, maxBy, sortBy, sumBy, uniqBy } from 'lodash'
-import { create } from 'zustand'
 
 import { BorrowTabName } from './BorrowPage'
 import { useCartState } from './InstantLoansContent/cartState'

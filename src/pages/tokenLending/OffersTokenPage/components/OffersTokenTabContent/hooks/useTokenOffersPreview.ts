@@ -1,5 +1,10 @@
 import { useEffect, useMemo } from 'react'
 
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useQuery } from '@tanstack/react-query'
+import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
+import { chain, map, maxBy } from 'lodash'
+
 import { TokenMarketPreview, core } from '@coopfi/api/tokens'
 import { useTokenMarketsPreview } from '@coopfi/pages/tokenLending/LendTokenPage'
 import { useTokenType } from '@coopfi/store/common'
@@ -9,10 +14,6 @@ import {
   useTokenOffersOptimistic,
 } from '@coopfi/store/token/useTokenOffersOptimistic'
 import { isBondOfferV3Closed } from '@coopfi/utils/core/tokenOffers'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useQuery } from '@tanstack/react-query'
-import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
-import { chain, map, maxBy } from 'lodash'
 
 export const useTokenOffersPreview = () => {
   const { publicKey } = useWallet()

@@ -1,5 +1,6 @@
-import { stats } from '@coopfi/api/nft'
 import { useQuery } from '@tanstack/react-query'
+
+import { stats } from '@coopfi/api/nft'
 
 export const useAllUsdcTotalStats = () => {
   const { data, isLoading } = useQuery(

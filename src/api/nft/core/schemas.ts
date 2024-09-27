@@ -1,3 +1,5 @@
+import { z } from 'zod'
+
 import {
   BondTradeTransactionSchema,
   FraktBondSchema,
@@ -6,7 +8,6 @@ import {
   StringIntSchema,
   StringPublicKeySchema,
 } from '@coopfi/api/shared'
-import { z } from 'zod'
 
 const MarketMetaSchema = z.object({
   marketApr: StringIntSchema,

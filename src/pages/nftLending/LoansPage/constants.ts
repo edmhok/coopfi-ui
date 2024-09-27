@@ -1,5 +1,6 @@
-import { Tab } from '@coopfi/components/Tabs'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+
+import { Tab } from '@coopfi/components/Tabs'
 
 export enum LoansTabsNames {
   REQUESTS = 'requests',

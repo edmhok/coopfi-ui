@@ -1,5 +1,11 @@
 import { useEffect, useMemo } from 'react'
 
+import { useWallet } from '@solana/wallet-adapter-react'
+import { useQuery } from '@tanstack/react-query'
+import { chain, filter, groupBy, map } from 'lodash'
+import moment from 'moment'
+import { create } from 'zustand'
+
 import { core, stats } from '@coopfi/api/nft'
 import { useTokenType } from '@coopfi/store/common'
 import {
@@ -13,11 +19,6 @@ import {
   useOffersOptimistic,
 } from '@coopfi/store/nft'
 import { isLoanListed, isLoanRepaid, isLoanTerminating, isOfferStateClosed } from '@coopfi/utils'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useQuery } from '@tanstack/react-query'
-import { chain, filter, groupBy, map } from 'lodash'
-import moment from 'moment'
-import { create } from 'zustand'
 
 import { LoansTabsNames, SECONDS_IN_72_HOURS } from './constants'
 

@@ -1,12 +1,20 @@
 import { useMemo, useState } from 'react'
 
-import { CollateralToken, core } from '@coopfi/api/tokens'
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { BN } from 'fbonds-core'
+import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
+import { chain, find, uniqueId } from 'lodash'
+import { useNavigate } from 'react-router-dom'
+import { TxnExecutor } from 'solana-transactions-executor'
+
 import { useBanxNotificationsSider } from '@coopfi/components/BanxNotifications'
 import {
   SubscribeNotificationsModal,
   createLoanSubscribeNotificationsContent,
   createLoanSubscribeNotificationsTitle,
 } from '@coopfi/components/modals'
+
+import { CollateralToken, core } from '@coopfi/api/tokens'
 import { useTokenMarketOffers } from '@coopfi/pages/tokenLending/LendTokenPage'
 import { getDialectAccessToken } from '@coopfi/providers'
 import { PATHS } from '@coopfi/router'
@@ -30,12 +38,6 @@ import {
   enqueueTransactionsSent,
   enqueueWaitingConfirmation,
 } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { BN } from 'fbonds-core'
-import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
-import { chain, find, uniqueId } from 'lodash'
-import { useNavigate } from 'react-router-dom'
-import { TxnExecutor } from 'solana-transactions-executor'
 
 import { useSelectedOffers } from './useSelectedOffers'
 

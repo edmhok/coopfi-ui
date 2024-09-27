@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 
-import { OnboardingModal, OnboardingModalContentType } from '@coopfi/components/modals'
-import { useModal } from '@coopfi/store/common'
 import { chain } from 'lodash'
+
+import { OnboardingModal, OnboardingModalContentType } from '@coopfi/components/modals'
+
+import { useModal } from '@coopfi/store/common'
 
 import { useLocalStorage } from './useLocalStorage'
 

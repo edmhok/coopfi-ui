@@ -1,5 +1,3 @@
-import { core } from '@coopfi/api/nft'
-import { BONDS } from '@coopfi/constants'
 import { web3 } from 'fbonds-core'
 import { LOOKUP_TABLE } from 'fbonds-core/lib/fbond-protocol/constants'
 import { removePerpetualOffer } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
@@ -9,6 +7,9 @@ import {
   SimulatedAccountInfoByPubkey,
   WalletAndConnection,
 } from 'solana-transactions-executor'
+
+import { core } from '@coopfi/api/nft'
+import { BONDS } from '@coopfi/constants'
 
 import { accountConverterBNAndPublicKey, parseAccountInfoByPubkey } from '../../functions'
 import { sendTxnPlaceHolder } from '../../helpers'

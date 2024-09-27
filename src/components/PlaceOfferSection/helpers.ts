@@ -1,6 +1,3 @@
-import { core } from '@coopfi/api/nft'
-import { SyntheticOffer } from '@coopfi/store/nft'
-import { ZERO_BN } from '@coopfi/utils'
 import { BN, web3 } from 'fbonds-core'
 import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
 import { getMockBondOffer } from 'fbonds-core/lib/fbond-protocol/functions/getters'
@@ -11,6 +8,10 @@ import {
 } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
 import { chain } from 'lodash'
+
+import { core } from '@coopfi/api/nft'
+import { SyntheticOffer } from '@coopfi/store/nft'
+import { ZERO_BN } from '@coopfi/utils'
 
 type GetUpdatedBondOffer = (props: {
   loanValue: number //? lamports

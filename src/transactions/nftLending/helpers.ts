@@ -1,5 +1,6 @@
-import { BorrowNft, Loan } from '@coopfi/api/nft/core'
 import { EMPTY_PUBKEY } from 'fbonds-core/lib/fbond-protocol/constants'
+
+import { BorrowNft, Loan } from '@coopfi/api/nft/core'
 
 export const convertLoanToBorrowNft = (loan: Loan): BorrowNft => {
   const { nft, fraktBond, bondTradeTransaction } = loan

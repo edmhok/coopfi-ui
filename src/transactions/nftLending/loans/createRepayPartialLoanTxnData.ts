@@ -1,11 +1,3 @@
-import { core } from '@coopfi/api/nft'
-import { BONDS } from '@coopfi/constants'
-import { banxSol } from '@coopfi/transactions'
-import {
-  calculateLoanRepayValueOnCertainDate,
-  isBanxSolTokenType,
-  isSolTokenType,
-} from '@coopfi/utils'
 import { BN, web3 } from 'fbonds-core'
 import { BASE_POINTS, EMPTY_PUBKEY, LOOKUP_TABLE } from 'fbonds-core/lib/fbond-protocol/constants'
 import { repayPartialPerpetualLoan } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
@@ -15,6 +7,15 @@ import {
   SimulatedAccountInfoByPubkey,
   WalletAndConnection,
 } from 'solana-transactions-executor'
+
+import { core } from '@coopfi/api/nft'
+import { BONDS } from '@coopfi/constants'
+import { banxSol } from '@coopfi/transactions'
+import {
+  calculateLoanRepayValueOnCertainDate,
+  isBanxSolTokenType,
+  isSolTokenType,
+} from '@coopfi/utils'
 
 import { parseAccountInfoByPubkey } from '../../functions'
 import { sendTxnPlaceHolder } from '../../helpers'

@@ -1,8 +1,9 @@
-import { core } from '@coopfi/api/tokens'
-import { isBanxSolTokenType, isSolTokenType, isUsdcTokenType } from '@coopfi/utils'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
 import { filter, uniqBy } from 'lodash'
 import moment from 'moment'
+
+import { core } from '@coopfi/api/tokens'
+import { isBanxSolTokenType, isSolTokenType, isUsdcTokenType } from '@coopfi/utils'
 
 const LOANS_CACHE_TIME_UNIX = 2 * 60 //? Auto clear optimistic after 2 minutes
 

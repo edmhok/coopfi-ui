@@ -1,3 +1,5 @@
+import { chain, first } from 'lodash'
+
 import { core } from '@coopfi/api/nft'
 import {
   calculateBorrowedAmount,
@@ -6,7 +8,6 @@ import {
   isLoanLiquidated,
   isLoanTerminating,
 } from '@coopfi/utils'
-import { chain, first } from 'lodash'
 
 type IsLoanAbleToClaim = (loan: core.Loan) => boolean
 export const isLoanAbleToClaim: IsLoanAbleToClaim = (loan) => {

@@ -1,5 +1,3 @@
-import { BANX_SOL_ADDRESS, BONDS, WSOL_ADDRESS } from '@coopfi/constants'
-import { removeDuplicatedPublicKeys } from '@coopfi/utils'
 import { Instruction, createJupiterApiClient } from '@jup-ag/api'
 import { BN, web3 } from 'fbonds-core'
 import { LOOKUP_TABLE, SANCTUM_PROGRAMM_ID } from 'fbonds-core/lib/fbond-protocol/constants'
@@ -9,6 +7,9 @@ import {
   swapToSol,
 } from 'fbonds-core/lib/fbond-protocol/functions/banxSol'
 import { CreateTxnData, WalletAndConnection } from 'solana-transactions-executor'
+
+import { BANX_SOL_ADDRESS, BONDS, WSOL_ADDRESS } from '@coopfi/constants'
+import { removeDuplicatedPublicKeys } from '@coopfi/utils'
 
 import { sendTxnPlaceHolder } from '../helpers'
 import { deserializeInstruction } from './helpers'

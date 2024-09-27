@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
 
-import { DIALECT } from '@coopfi/constants'
 import { useDialectSdk, useDialectWallet } from '@dialectlabs/react-sdk'
 import { create } from 'zustand'
+
+import { DIALECT } from '@coopfi/constants'
 
 import { ScreenType } from './BanxNotificationsSider/constants'
 

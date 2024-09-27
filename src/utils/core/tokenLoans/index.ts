@@ -1,5 +1,3 @@
-import { core } from '@coopfi/api/tokens'
-import { SECONDS_IN_72_HOURS, SECONDS_IN_DAY } from '@coopfi/constants'
 import { BN } from 'fbonds-core'
 import { BASE_POINTS, PROTOCOL_FEE_TOKEN_BN } from 'fbonds-core/lib/fbond-protocol/constants'
 import {
@@ -9,6 +7,9 @@ import {
 import { calcBorrowerTokenAPR } from 'fbonds-core/lib/fbond-protocol/helpers'
 import { BondTradeTransactionV2State } from 'fbonds-core/lib/fbond-protocol/types'
 import moment from 'moment'
+
+import { core } from '@coopfi/api/tokens'
+import { SECONDS_IN_72_HOURS, SECONDS_IN_DAY } from '@coopfi/constants'
 
 import { calculateApr } from '../loans'
 

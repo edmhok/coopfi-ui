@@ -1,6 +1,7 @@
+import { reduce } from 'lodash'
+
 import { core } from '@coopfi/api/nft'
 import { calculateBorrowedAmount, calculateClaimValue } from '@coopfi/utils'
-import { reduce } from 'lodash'
 
 export const getTerminateStatsInfo = (loans: core.Loan[]) => {
   return reduce(

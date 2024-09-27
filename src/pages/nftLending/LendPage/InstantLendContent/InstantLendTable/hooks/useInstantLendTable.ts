@@ -1,5 +1,6 @@
-import { core } from '@coopfi/api/nft'
 import { first, groupBy, map } from 'lodash'
+
+import { core } from '@coopfi/api/nft'
 
 import { useAllLoansRequests } from '../../hooks'
 import { useFilterLoans } from './useFilterLoans'

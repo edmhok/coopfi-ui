@@ -1,6 +1,5 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 
-import { DIALECT } from '@coopfi/constants'
 import {
   AddressType,
   useDialectSdk,
@@ -8,6 +7,8 @@ import {
   useNotificationChannelDappSubscription,
   useNotificationSubscriptions,
 } from '@dialectlabs/react-sdk'
+
+import { DIALECT } from '@coopfi/constants'
 
 interface UseAddressSettingsProps {
   addressType: AddressType

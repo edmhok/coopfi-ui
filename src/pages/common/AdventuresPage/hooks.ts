@@ -1,9 +1,10 @@
-import { staking } from '@coopfi/api/common'
-import { BANX_TOKEN_APPROX_CIRCULATING_AMOUNT } from '@coopfi/constants'
-import { queryClient } from '@coopfi/providers'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
 import { BN } from 'fbonds-core'
+
+import { staking } from '@coopfi/api/common'
+import { BANX_TOKEN_APPROX_CIRCULATING_AMOUNT } from '@coopfi/constants'
+import { queryClient } from '@coopfi/providers'
 
 import { mergeBanxSettings, mergeWithBanxStakingInfo } from './optimistics'
 

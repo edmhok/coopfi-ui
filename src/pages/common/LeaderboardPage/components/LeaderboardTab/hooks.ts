@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react'
 
-import { user } from '@coopfi/api/common'
-import { RBOption } from '@coopfi/components/RadioButton'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useInfiniteQuery } from '@tanstack/react-query'
+
+import { RBOption } from '@coopfi/components/RadioButton'
+
+import { user } from '@coopfi/api/common'
 
 const PAGINATION_LIMIT = 15
 

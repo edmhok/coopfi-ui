@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
 
-import { BACKEND_BASE_URL, FCM } from '@coopfi/constants'
 import { useWallet } from '@solana/wallet-adapter-react'
 import axios from 'axios'
 import { web3 } from 'fbonds-core'
 import { initializeApp } from 'firebase/app'
 import { getMessaging, getToken } from 'firebase/messaging'
+
+import { BACKEND_BASE_URL, FCM } from '@coopfi/constants'
 
 const firebaseConfig = {
   apiKey: FCM.API_KEY,

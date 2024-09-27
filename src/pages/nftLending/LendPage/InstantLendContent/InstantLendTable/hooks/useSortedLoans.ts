@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react'
 
-import { core } from '@coopfi/api/nft'
-import { SortOption } from '@coopfi/components/SortDropdown'
-import { calculateLendValue, calculateLenderApr, isLoanTerminating } from '@coopfi/utils'
 import { orderBy } from 'lodash'
+
+import { SortOption } from '@coopfi/components/SortDropdown'
+
+import { core } from '@coopfi/api/nft'
+import { calculateLendValue, calculateLenderApr, isLoanTerminating } from '@coopfi/utils'
 
 enum SortField {
   DURATION = 'duration',

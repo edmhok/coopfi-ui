@@ -1,5 +1,6 @@
-import { NFTSchema, StringIntSchema, StringPublicKeySchema } from '@coopfi/api/shared'
 import { z } from 'zod'
+
+import { NFTSchema, StringIntSchema, StringPublicKeySchema } from '@coopfi/api/shared'
 
 export const BorrowerActivitySchema = z.object({
   id: z.string(),

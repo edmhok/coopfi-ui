@@ -1,11 +1,12 @@
-import { RequestWithPagination } from '@coopfi/api/shared'
-import { BACKEND_BASE_URL, IS_PRIVATE_MARKETS } from '@coopfi/constants'
 import axios from 'axios'
 import {
   BondOfferV3,
   BondingCurveType,
   LendingTokenType,
 } from 'fbonds-core/lib/fbond-protocol/types'
+
+import { RequestWithPagination } from '@coopfi/api/shared'
+import { BACKEND_BASE_URL, IS_PRIVATE_MARKETS } from '@coopfi/constants'
 
 import { convertToMarketType } from '../../helpers'
 import { parseResponseSafe } from './../../shared/validation'

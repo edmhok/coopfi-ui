@@ -1,3 +1,8 @@
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { every, uniqueId } from 'lodash'
+import moment from 'moment'
+import { TxnExecutor } from 'solana-transactions-executor'
+
 import { core } from '@coopfi/api/tokens'
 import { useIsLedger, useModal } from '@coopfi/store/common'
 import { useTokenLoansOptimistic } from '@coopfi/store/token'
@@ -25,10 +30,6 @@ import {
   enqueueWaitingConfirmation,
   isTokenLoanRepaymentCallActive,
 } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { every, uniqueId } from 'lodash'
-import moment from 'moment'
-import { TxnExecutor } from 'solana-transactions-executor'
 
 import { caclFractionToRepay, caclFractionToRepayForRepaymentCall } from '../helpers'
 import { useSelectedTokenLoans } from '../loansState'

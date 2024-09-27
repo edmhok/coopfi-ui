@@ -1,10 +1,11 @@
 import { useMemo } from 'react'
 
-import { core } from '@coopfi/api/nft'
-import { useTokenType } from '@coopfi/store/common'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
 import { chain, maxBy } from 'lodash'
+
+import { core } from '@coopfi/api/nft'
+import { useTokenType } from '@coopfi/store/common'
 
 import { useHiddenNftsMints, useLenderLoansOptimistic } from '.'
 

@@ -1,5 +1,9 @@
 import { useMemo } from 'react'
 
+import { useWallet } from '@solana/wallet-adapter-react'
+import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
+import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
+
 import {
   useTokenMarketOffers,
   useTokenMarketsPreview,
@@ -9,9 +13,6 @@ import {
   convertToSynthetic,
   useSyntheticTokenOffers,
 } from '@coopfi/store/token'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
-import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
 
 export const useMarketOrders = (marketPubkey: string, offerPubkey: string) => {
   const { offers, isLoading } = useTokenMarketOffers(marketPubkey)

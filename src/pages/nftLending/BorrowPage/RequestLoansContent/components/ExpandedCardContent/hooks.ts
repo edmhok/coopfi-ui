@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
-import { core } from '@coopfi/api/nft'
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { chain, uniqueId } from 'lodash'
+import { useNavigate } from 'react-router-dom'
+import { TxnExecutor } from 'solana-transactions-executor'
+
 import { useBanxNotificationsSider } from '@coopfi/components/BanxNotifications'
 import {
   MAX_BORROWER_APR_VALUE,
@@ -11,6 +15,8 @@ import {
   createRequestLoanSubscribeNotificationsContent,
   createRequestLoanSubscribeNotificationsTitle,
 } from '@coopfi/components/modals'
+
+import { core } from '@coopfi/api/nft'
 import { BONDS, DAYS_IN_YEAR, SECONDS_IN_DAY } from '@coopfi/constants'
 import { useBorrowNfts } from '@coopfi/pages/nftLending/BorrowPage/hooks'
 import { LoansTabsNames, useLoansTabs } from '@coopfi/pages/nftLending/LoansPage'
@@ -40,10 +46,6 @@ import {
   formatDecimalWithoutTrailingZeros,
   getTokenDecimals,
 } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { chain, uniqueId } from 'lodash'
-import { useNavigate } from 'react-router-dom'
-import { TxnExecutor } from 'solana-transactions-executor'
 
 import { useSelectedNfts } from '../../nftsState'
 import { DEFAULT_FREEZE_VALUE } from './constants'

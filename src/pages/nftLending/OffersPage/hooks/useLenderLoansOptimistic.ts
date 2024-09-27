@@ -1,10 +1,11 @@
 import { useMemo } from 'react'
 
-import { core } from '@coopfi/api/nft'
-import { useTokenType } from '@coopfi/store/common'
 import { produce } from 'immer'
 import { filter } from 'lodash'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/nft'
+import { useTokenType } from '@coopfi/store/common'
 
 export interface LoanOptimistic {
   loan: core.Loan

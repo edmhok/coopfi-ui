@@ -1,6 +1,7 @@
-import { BorrowOffer } from '@coopfi/api/tokens'
 import produce from 'immer'
 import { create } from 'zustand'
+
+import { BorrowOffer } from '@coopfi/api/tokens'
 
 interface SelectedOffersState {
   selection: BorrowOffer[]

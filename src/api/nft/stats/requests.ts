@@ -1,7 +1,8 @@
-import { parseResponseSafe } from '@coopfi/api/shared'
-import { BACKEND_BASE_URL } from '@coopfi/constants'
 import axios from 'axios'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+
+import { parseResponseSafe } from '@coopfi/api/shared'
+import { BACKEND_BASE_URL } from '@coopfi/constants'
 
 import { convertToMarketType } from '../../helpers'
 import {

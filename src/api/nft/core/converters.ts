@@ -1,4 +1,3 @@
-import { SerializedPublicKeySchema } from '@coopfi/api/shared'
 import { BN } from 'fbonds-core'
 import {
   BondFeatures,
@@ -8,6 +7,8 @@ import {
 } from 'fbonds-core/lib/fbond-protocol/types'
 import { convertValuesInAccount } from 'solana-transactions-parser'
 import { z } from 'zod'
+
+import { SerializedPublicKeySchema } from '@coopfi/api/shared'
 
 import { Offer } from './types'
 

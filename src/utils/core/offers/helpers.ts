@@ -1,8 +1,9 @@
-import { Offer, core } from '@coopfi/api/nft'
 import { calculateNextSpotPrice } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import { getMaxLoanValueFromBondOfferBN } from 'fbonds-core/lib/fbond-protocol/helpers'
 import { PairState } from 'fbonds-core/lib/fbond-protocol/types'
 import { chain, uniqueId } from 'lodash'
+
+import { Offer, core } from '@coopfi/api/nft'
 
 import { SimpleOffer } from './types'
 

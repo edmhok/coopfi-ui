@@ -1,6 +1,9 @@
 import { useCallback, useMemo, useState } from 'react'
 
-import { core } from '@coopfi/api/nft'
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { chain, filter, first, groupBy, includes, isEmpty, map, orderBy } from 'lodash'
+import { useNavigate } from 'react-router-dom'
+
 import { useBanxNotificationsSider } from '@coopfi/components/BanxNotifications'
 import { SortOption } from '@coopfi/components/SortDropdown'
 import {
@@ -8,6 +11,8 @@ import {
   createLoanSubscribeNotificationsContent,
   createLoanSubscribeNotificationsTitle,
 } from '@coopfi/components/modals'
+
+import { core } from '@coopfi/api/nft'
 import { getDialectAccessToken } from '@coopfi/providers'
 import { PATHS } from '@coopfi/router'
 import { buildUrlWithModeAndToken, createGlobalState } from '@coopfi/store'
@@ -20,9 +25,6 @@ import {
   useTokenType,
 } from '@coopfi/store/common'
 import { useLoansOptimistic, useOffersOptimistic } from '@coopfi/store/nft'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { chain, filter, first, groupBy, includes, isEmpty, map, orderBy } from 'lodash'
-import { useNavigate } from 'react-router-dom'
 
 import { useCartState } from '../../cartState'
 import { getTableColumns } from './columns'

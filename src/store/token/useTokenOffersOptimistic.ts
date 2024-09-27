@@ -1,12 +1,13 @@
 import { useEffect, useMemo } from 'react'
 
-import { core } from '@coopfi/api/tokens'
 import { getBondingCurveTypeFromLendingToken } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
 import { get, set } from 'idb-keyval'
 import { filter, map, uniqBy } from 'lodash'
 import moment from 'moment'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/tokens'
 
 import { useTokenType } from '../common'
 

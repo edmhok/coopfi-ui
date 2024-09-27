@@ -1,3 +1,7 @@
+import { BN } from 'fbonds-core'
+import { BASE_POINTS } from 'fbonds-core/lib/fbond-protocol/constants'
+import moment from 'moment'
+
 import { core } from '@coopfi/api/tokens'
 import {
   calculateLentTokenValueWithInterest,
@@ -5,9 +9,6 @@ import {
   calculateTokenRepaymentCallLenderReceivesAmount,
   isTokenLoanRepaymentCallActive,
 } from '@coopfi/utils'
-import { BN } from 'fbonds-core'
-import { BASE_POINTS } from 'fbonds-core/lib/fbond-protocol/constants'
-import moment from 'moment'
 
 export const calculateFreezeExpiredAt = (loan: core.TokenLoan) => {
   return loan.bondTradeTransaction.soldAt + loan.bondTradeTransaction.terminationFreeze

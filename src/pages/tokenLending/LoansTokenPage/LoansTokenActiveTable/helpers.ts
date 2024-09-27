@@ -1,3 +1,13 @@
+import { BN } from 'fbonds-core'
+import {
+  calculateCurrentInterestSolPure,
+  calculatePartOfLoanBodyFromInterest,
+} from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
+import { calcBorrowerTokenAPR } from 'fbonds-core/lib/fbond-protocol/helpers'
+import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
+import { map } from 'lodash'
+import moment from 'moment'
+
 import { convertBondOfferV3ToCore } from '@coopfi/api/nft'
 import { core } from '@coopfi/api/tokens'
 import {
@@ -8,15 +18,6 @@ import {
   isBanxSolTokenType,
   isTokenLoanRepaymentCallActive,
 } from '@coopfi/utils'
-import { BN } from 'fbonds-core'
-import {
-  calculateCurrentInterestSolPure,
-  calculatePartOfLoanBodyFromInterest,
-} from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
-import { calcBorrowerTokenAPR } from 'fbonds-core/lib/fbond-protocol/helpers'
-import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
-import { map } from 'lodash'
-import moment from 'moment'
 
 //? This fee is associated with account creation. It's used to display the correct value when the SOL token type is used.
 const getPartialRepayRentFee = (loan: core.TokenLoan) => {

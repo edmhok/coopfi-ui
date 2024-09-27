@@ -1,5 +1,6 @@
-import { BACKEND_BASE_URL } from '@coopfi/constants'
 import axios from 'axios'
+
+import { BACKEND_BASE_URL } from '@coopfi/constants'
 
 interface NotificationContent {
   html: string

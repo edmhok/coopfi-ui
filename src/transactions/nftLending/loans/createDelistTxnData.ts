@@ -1,6 +1,3 @@
-import { TokenStandard } from '@coopfi/api'
-import { core } from '@coopfi/api/nft'
-import { BANX_STAKING, BONDS } from '@coopfi/constants'
 import { web3 } from 'fbonds-core'
 import { EMPTY_PUBKEY, LOOKUP_TABLE } from 'fbonds-core/lib/fbond-protocol/constants'
 import {
@@ -11,6 +8,10 @@ import {
 } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import { getAssetProof } from 'fbonds-core/lib/fbond-protocol/helpers'
 import { CreateTxnData, WalletAndConnection } from 'solana-transactions-executor'
+
+import { TokenStandard } from '@coopfi/api'
+import { core } from '@coopfi/api/nft'
+import { BANX_STAKING, BONDS } from '@coopfi/constants'
 
 import { fetchRuleset } from '../../functions'
 import { sendTxnPlaceHolder } from '../../helpers'

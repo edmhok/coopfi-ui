@@ -1,6 +1,7 @@
-import { solana } from '@coopfi/api/common'
 import { useConnection } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
+
+import { solana } from '@coopfi/api/common'
 
 export const useClusterStats = () => {
   const { connection } = useConnection()

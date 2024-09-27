@@ -1,11 +1,12 @@
+import { useWallet } from '@solana/wallet-adapter-react'
+import { first, groupBy, map } from 'lodash'
+import { useNavigate } from 'react-router-dom'
+
 import { core } from '@coopfi/api/tokens'
 import { PATHS } from '@coopfi/router'
 import { buildUrlWithModeAndToken } from '@coopfi/store'
 import { AssetMode, useTokenType } from '@coopfi/store/common'
 import { getTokenTicker } from '@coopfi/utils'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { first, groupBy, map } from 'lodash'
-import { useNavigate } from 'react-router-dom'
 
 import { useFilterLoans } from './useFilterLoans'
 import { useSortedLoans } from './useSortedLoans'

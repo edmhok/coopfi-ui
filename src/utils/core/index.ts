@@ -1,6 +1,7 @@
-import { core } from '@coopfi/api/nft'
 import { BN } from 'fbonds-core'
 import { reduce } from 'lodash'
+
+import { core } from '@coopfi/api/nft'
 
 export const calcWeightedAverage = (nums: number[], weights: number[]) => {
   const [sum, weightSum] = reduce(

@@ -1,9 +1,10 @@
 import { useEffect, useMemo } from 'react'
 
+import { BN } from 'fbonds-core'
+
 import { useWalletBalance } from '@coopfi/hooks'
 import { useTokenType } from '@coopfi/store/common'
 import { ZERO_BN, getTokenDecimals, stringToBN } from '@coopfi/utils'
-import { BN } from 'fbonds-core'
 
 import { getAprErrorMessage, getErrorMessage } from '../helpers'
 import { useOfferFormController } from './useOfferFormController'

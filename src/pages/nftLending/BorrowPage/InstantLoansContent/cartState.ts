@@ -1,7 +1,8 @@
-import { SimpleOffer } from '@coopfi/utils'
 import produce from 'immer'
 import { groupBy, isEmpty } from 'lodash'
 import { create } from 'zustand'
+
+import { SimpleOffer } from '@coopfi/utils'
 
 import { SimpleOffersByMarket } from './types'
 

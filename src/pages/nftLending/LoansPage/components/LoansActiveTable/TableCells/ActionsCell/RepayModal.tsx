@@ -8,7 +8,11 @@ import { Modal } from '@coopfi/components/modals/BaseModal'
 
 import { core } from '@coopfi/api/nft'
 import { useModal } from '@coopfi/store/common'
-import { calculateLoanRepayValue, getColorByPercent, isLoanRepaymentCallActive } from '@coopfi/utils'
+import {
+  calculateLoanRepayValue,
+  getColorByPercent,
+  isLoanRepaymentCallActive,
+} from '@coopfi/utils'
 
 import { useLoansTransactions } from '../../hooks'
 

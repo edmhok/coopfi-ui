@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { CountdownUnits, getTimeDifference, splitTimeDifferenceToUnits } from '@coopfi/utils'
 import { Duration } from 'moment'
+
+import { CountdownUnits, getTimeDifference, splitTimeDifferenceToUnits } from '@coopfi/utils'
 
 export const useCountdown = (endTimeUnix: number): CountdownUnits => {
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)

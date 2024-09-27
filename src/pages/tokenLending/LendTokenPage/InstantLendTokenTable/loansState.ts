@@ -1,6 +1,7 @@
-import { core } from '@coopfi/api/tokens'
 import produce from 'immer'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/tokens'
 
 type LoansTokenState = {
   selection: core.TokenLoan[]

@@ -1,5 +1,10 @@
 import { useEffect, useMemo } from 'react'
 
+import { useQuery } from '@tanstack/react-query'
+import { BondOfferV3, PairState } from 'fbonds-core/lib/fbond-protocol/types'
+import { chain, map, maxBy } from 'lodash'
+import { create } from 'zustand'
+
 import { core } from '@coopfi/api/tokens'
 import { useTokenType } from '@coopfi/store/common'
 import {
@@ -8,10 +13,6 @@ import {
   useTokenOffersOptimistic,
 } from '@coopfi/store/token/useTokenOffersOptimistic'
 import { isOfferStateClosed } from '@coopfi/utils'
-import { useQuery } from '@tanstack/react-query'
-import { BondOfferV3, PairState } from 'fbonds-core/lib/fbond-protocol/types'
-import { chain, map, maxBy } from 'lodash'
-import { create } from 'zustand'
 
 import { LendTokenTabName } from './LendTokenPage'
 

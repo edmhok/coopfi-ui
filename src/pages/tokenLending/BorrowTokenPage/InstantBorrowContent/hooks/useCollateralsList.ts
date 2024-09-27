@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
 
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { useQuery } from '@tanstack/react-query'
+
 import { fetchTokenBalance } from '@coopfi/api/common'
 import { core } from '@coopfi/api/tokens'
 import { USDC_ADDRESS, WSOL_ADDRESS } from '@coopfi/constants'
 import { useTokenType } from '@coopfi/store/common'
 import { isBanxSolTokenType } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { useQuery } from '@tanstack/react-query'
 
 import { BORROW_TOKENS_LIST } from '../../constants'
 

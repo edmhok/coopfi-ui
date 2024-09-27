@@ -1,5 +1,6 @@
-import { TICKER_TO_TOKEN, TOKEN_TICKER } from '@coopfi/utils'
 import { LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+
+import { TICKER_TO_TOKEN, TOKEN_TICKER } from '@coopfi/utils'
 
 import { AssetMode } from './common'
 

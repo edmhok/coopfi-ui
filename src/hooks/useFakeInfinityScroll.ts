@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react'
 
-import { useIntersection } from '@coopfi/hooks'
 import { debounce } from 'lodash'
+
+import { useIntersection } from '@coopfi/hooks'
 
 interface UseFakeInfinityScrollProps<T> {
   rawData: T[]

@@ -1,11 +1,13 @@
 import { useCallback, useEffect } from 'react'
 
-import { user } from '@coopfi/api/common'
-import RefferralModal from '@coopfi/components/RefferralModal'
-import { useBanxLogin, useIsLedger, useModal } from '@coopfi/store/common'
-import { enqueueSnackbar, generateSignature } from '@coopfi/utils'
 import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { useLocation, useNavigate } from 'react-router-dom'
+
+import RefferralModal from '@coopfi/components/RefferralModal'
+
+import { user } from '@coopfi/api/common'
+import { useBanxLogin, useIsLedger, useModal } from '@coopfi/store/common'
+import { enqueueSnackbar, generateSignature } from '@coopfi/utils'
 
 export const useReferralLink = () => {
   const wallet = useWallet()

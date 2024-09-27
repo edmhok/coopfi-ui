@@ -47,7 +47,7 @@ const ExpandedCardContent: FC<ExpandedCardContentProps> = ({ market, offerPubkey
 
 export default ExpandedCardContent
 
-interface TabsContent extends ExpandedCardContentProps { }
+interface TabsContent extends ExpandedCardContentProps {}
 const TabsContent: FC<TabsContent> = ({ market, offerPubkey }) => {
   const { value: currentTabValue, ...tabsProps } = useTabs({
     tabs: TABS,
@@ -65,7 +65,7 @@ const TabsContent: FC<TabsContent> = ({ market, offerPubkey }) => {
   )
 }
 
-interface OffersModal extends ExpandedCardContentProps { }
+interface OffersModal extends ExpandedCardContentProps {}
 const OffersModal: FC<OffersModal> = (props) => {
   const { close } = useModal()
 

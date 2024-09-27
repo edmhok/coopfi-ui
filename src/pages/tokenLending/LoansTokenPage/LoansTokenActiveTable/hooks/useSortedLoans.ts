@@ -1,7 +1,10 @@
 import { useMemo, useState } from 'react'
 
-import { core } from '@coopfi/api/tokens'
+import { chain, orderBy } from 'lodash'
+
 import { SortOption, SortOrder } from '@coopfi/components/SortDropdown'
+
+import { core } from '@coopfi/api/tokens'
 import {
   caclulateBorrowTokenLoanValue,
   getTokenDecimals,
@@ -9,7 +12,6 @@ import {
   isTokenLoanRepaymentCallActive,
   isTokenLoanTerminating,
 } from '@coopfi/utils'
-import { chain, orderBy } from 'lodash'
 
 import styles from '../LoansTokenActiveTable.module.less'
 

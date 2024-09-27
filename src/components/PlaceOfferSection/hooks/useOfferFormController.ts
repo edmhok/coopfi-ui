@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
+import { clamp, trimStart } from 'lodash'
+
 import { useTokenType } from '@coopfi/store/common'
 import { SyntheticOffer } from '@coopfi/store/nft'
 import { getTokenDecimals } from '@coopfi/utils'
-import { clamp, trimStart } from 'lodash'
 
 export const useOfferFormController = (syntheticOffer: SyntheticOffer) => {
   const { tokenType } = useTokenType()

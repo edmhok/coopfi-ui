@@ -1,10 +1,11 @@
-import { staking } from '@coopfi/api/common'
-import { StakingSimulatedAccountsResult } from '@coopfi/transactions/staking'
-import { ZERO_BN } from '@coopfi/utils'
 import { BN } from 'fbonds-core'
 import { calcOptimisticBasedOnBulkSimulation } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import { BanxStakeState } from 'fbonds-core/lib/fbond-protocol/types'
 import { chain, groupBy, reduce } from 'lodash'
+
+import { staking } from '@coopfi/api/common'
+import { StakingSimulatedAccountsResult } from '@coopfi/transactions/staking'
+import { ZERO_BN } from '@coopfi/utils'
 
 export const convertStakingSimulatedAccountsToMergeData = (
   stakingSimulatedAccountsResults: StakingSimulatedAccountsResult[],

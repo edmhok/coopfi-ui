@@ -1,3 +1,5 @@
+import { SimulatedAccountInfoByPubkey } from 'solana-transactions-executor'
+
 import {
   BanxAdventure,
   BanxAdventureSubscription,
@@ -5,7 +7,6 @@ import {
   BanxStakingSettings,
   BanxTokenStake,
 } from '@coopfi/api/common'
-import { SimulatedAccountInfoByPubkey } from 'solana-transactions-executor'
 
 import { parseAccountInfoByPubkey } from '../functions'
 

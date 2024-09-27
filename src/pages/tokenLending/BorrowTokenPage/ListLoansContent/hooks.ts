@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
+import { clamp } from 'lodash'
+
 import { CollateralToken } from '@coopfi/api/tokens'
 import { DAYS_IN_YEAR } from '@coopfi/constants'
-import { clamp } from 'lodash'
 
 import { BORROW_TOKENS_LIST, BorrowToken } from '../constants'
 

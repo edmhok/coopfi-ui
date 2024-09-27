@@ -1,9 +1,10 @@
 import { useEffect, useMemo } from 'react'
 
-import { core } from '@coopfi/api/nft'
 import { get, set } from 'idb-keyval'
 import { map } from 'lodash'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/nft'
 
 import { useTokenType } from '../../common/useTokenType'
 import {

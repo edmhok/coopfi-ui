@@ -1,10 +1,11 @@
 import { useMemo } from 'react'
 
-import { core } from '@coopfi/api/tokens'
-import { useTokenType } from '@coopfi/store/common'
 import { useQuery } from '@tanstack/react-query'
 import { produce } from 'immer'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/tokens'
+import { useTokenType } from '@coopfi/store/common'
 
 interface HiddenLoansPubkeysState {
   pubkeys: string[]

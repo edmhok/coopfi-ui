@@ -1,4 +1,3 @@
-import { SerializedBNSchema, StringIntSchema, StringPublicKeySchema } from '@coopfi/api/shared'
 import {
   BanxAdventureState,
   BanxAdventureSubscriptionState,
@@ -7,6 +6,8 @@ import {
   BanxTokenStakeState,
 } from 'fbonds-core/lib/fbond-protocol/types'
 import { z } from 'zod'
+
+import { SerializedBNSchema, StringIntSchema, StringPublicKeySchema } from '@coopfi/api/shared'
 
 export const BanxStakingSettingsSchema = z.object({
   banxStakingSettingsState: z.nativeEnum(BanxStakingSettingsState),

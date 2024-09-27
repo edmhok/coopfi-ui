@@ -1,6 +1,3 @@
-import { ClusterStats } from '@coopfi/api/common'
-import { core } from '@coopfi/api/nft'
-import { isOfferStateClosed } from '@coopfi/utils'
 import { BN } from 'fbonds-core'
 import { BANX_SOL_STAKING_YEILD_APR } from 'fbonds-core/lib/fbond-protocol/constants'
 import {
@@ -10,6 +7,10 @@ import {
 import { BondingCurveType } from 'fbonds-core/lib/fbond-protocol/types'
 import { chain, sumBy } from 'lodash'
 import moment from 'moment'
+
+import { ClusterStats } from '@coopfi/api/common'
+import { core } from '@coopfi/api/nft'
+import { isOfferStateClosed } from '@coopfi/utils'
 
 export const getLenderVaultInfo = (
   offers: core.Offer[],

@@ -1,6 +1,12 @@
 import { useState } from 'react'
 
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { BN } from 'fbonds-core'
+import { uniqueId } from 'lodash'
+import { TxnExecutor } from 'solana-transactions-executor'
+
 import { Tab, useTabs } from '@coopfi/components/Tabs'
+
 import {
   calcPartnerPoints,
   useBanxStakeInfo,
@@ -27,10 +33,6 @@ import {
   enqueueWaitingConfirmationSingle,
   limitDecimalPlaces,
 } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { BN } from 'fbonds-core'
-import { uniqueId } from 'lodash'
-import { TxnExecutor } from 'solana-transactions-executor'
 
 import { calcIdleBalance, calcPlayerPoints, formatBanxTokensStrToBN } from './helpers'
 

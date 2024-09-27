@@ -1,6 +1,3 @@
-import { BondTradeTransaction, FraktBond, Offer } from '@coopfi/api/nft'
-import { core } from '@coopfi/api/tokens'
-import { BONDS } from '@coopfi/constants'
 import { BN, web3 } from 'fbonds-core'
 import { LOOKUP_TABLE } from 'fbonds-core/lib/fbond-protocol/constants'
 import {
@@ -13,6 +10,10 @@ import {
   SimulatedAccountInfoByPubkey,
   WalletAndConnection,
 } from 'solana-transactions-executor'
+
+import { BondTradeTransaction, FraktBond, Offer } from '@coopfi/api/nft'
+import { core } from '@coopfi/api/tokens'
+import { BONDS } from '@coopfi/constants'
 
 import { accountConverterBNAndPublicKey, parseAccountInfoByPubkey } from '../functions'
 import { sendTxnPlaceHolder } from '../helpers'

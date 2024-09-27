@@ -1,10 +1,11 @@
 import { useMemo } from 'react'
 
+import { useWallet } from '@solana/wallet-adapter-react'
+import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
+
 import { core } from '@coopfi/api/nft'
 import { useMarketOffers, useMarketsPreview } from '@coopfi/pages/nftLending/LendPage/hooks'
 import { SyntheticOffer, convertToSynthetic, useSyntheticOffers } from '@coopfi/store/nft'
-import { useWallet } from '@solana/wallet-adapter-react'
-import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
 
 type UseMarketOrders = (props: { marketPubkey: string; offerPubkey: string }) => {
   offers: SyntheticOffer[]

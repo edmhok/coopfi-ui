@@ -1,3 +1,13 @@
+import { BN, web3 } from 'fbonds-core'
+import { LOOKUP_TABLE } from 'fbonds-core/lib/fbond-protocol/constants'
+import { borrowPerpetualSpl } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
+import { BondOfferV3, LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
+import {
+  CreateTxnData,
+  SimulatedAccountInfoByPubkey,
+  WalletAndConnection,
+} from 'solana-transactions-executor'
+
 import { core } from '@coopfi/api/nft'
 import { CollateralToken } from '@coopfi/api/tokens'
 import { BONDS } from '@coopfi/constants'
@@ -8,15 +18,6 @@ import {
   sendTxnPlaceHolder,
 } from '@coopfi/transactions'
 import { isBanxSolTokenType } from '@coopfi/utils'
-import { BN, web3 } from 'fbonds-core'
-import { LOOKUP_TABLE } from 'fbonds-core/lib/fbond-protocol/constants'
-import { borrowPerpetualSpl } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
-import { BondOfferV3, LendingTokenType } from 'fbonds-core/lib/fbond-protocol/types'
-import {
-  CreateTxnData,
-  SimulatedAccountInfoByPubkey,
-  WalletAndConnection,
-} from 'solana-transactions-executor'
 
 export type CreateBorrowTokenTxnDataParams = {
   collateral: CollateralToken

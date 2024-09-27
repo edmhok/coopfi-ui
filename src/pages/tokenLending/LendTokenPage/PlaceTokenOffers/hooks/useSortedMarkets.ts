@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react'
 
-import { core } from '@coopfi/api/tokens'
-import { SortOption } from '@coopfi/components/SortDropdown'
 import { orderBy } from 'lodash'
+
+import { SortOption } from '@coopfi/components/SortDropdown'
+
+import { core } from '@coopfi/api/tokens'
 
 export enum SortField {
   OFFER_TVL = 'offerTvl',

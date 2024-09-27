@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 
+import { isEqual } from 'lodash'
+
 import { TABLET_WIDTH } from '@coopfi/constants'
 import { useLocalStorage, useOnClickOutside, useWindowSize } from '@coopfi/hooks'
-import { isEqual } from 'lodash'
 
 const MAX_TAG_TEXT_LENGTH = 15
 

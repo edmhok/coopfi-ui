@@ -1,11 +1,12 @@
 import { useCallback, useMemo } from 'react'
 
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { create } from 'zustand'
+
 import { user } from '@coopfi/api/common'
 import { useLinkedWallets } from '@coopfi/pages/common/LeaderboardPage'
 import { useBanxLogin, useIsLedger, useModal } from '@coopfi/store/common'
 import { enqueueSnackbar, generateSignature } from '@coopfi/utils'
-import { useConnection, useWallet } from '@solana/wallet-adapter-react'
-import { create } from 'zustand'
 
 type SavedLinkingData = {
   walletPubkey: string

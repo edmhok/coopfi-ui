@@ -1,6 +1,7 @@
+import { calculatePlayerPointsForTokens } from 'fbonds-core/lib/fbond-protocol/functions/banxStaking/banxTokenStaking'
+
 import { BANX_TOKEN_DECIMALS } from '@coopfi/constants'
 import { stringToBN } from '@coopfi/utils'
-import { calculatePlayerPointsForTokens } from 'fbonds-core/lib/fbond-protocol/functions/banxStaking/banxTokenStaking'
 
 export const calcPlayerPoints = (value: string) => {
   const tokensToStakeBN = formatBanxTokensStrToBN(value)

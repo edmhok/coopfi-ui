@@ -1,5 +1,6 @@
-import { enqueueSnackbar } from '@coopfi/utils'
 import { TxnError } from 'solana-transactions-executor'
+
+import { enqueueSnackbar } from '@coopfi/utils'
 
 import { createErrorLogsString } from '.'
 import { TxnErrorHumanName } from '../types'

@@ -1,7 +1,8 @@
-import { user } from '@coopfi/api/common'
-import { queryClient } from '@coopfi/providers'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useQuery } from '@tanstack/react-query'
+
+import { user } from '@coopfi/api/common'
+import { queryClient } from '@coopfi/providers'
 
 //? useSeasonUserRewards
 const USE_SEASON_USER_REWARDS_QUERY_KEY = 'seasonUserRewards'

@@ -1,6 +1,3 @@
-import { staking } from '@coopfi/api/common'
-import { BANX_TOKEN_DECIMALS } from '@coopfi/constants'
-import { ZERO_BN, bnToFixed, bnToHuman } from '@coopfi/utils'
 import { BN } from 'fbonds-core'
 import { BANX_ADVENTURE_GAP } from 'fbonds-core/lib/fbond-protocol/constants'
 import {
@@ -9,6 +6,10 @@ import {
 } from 'fbonds-core/lib/fbond-protocol/functions/banxStaking/banxTokenStaking'
 import { chain } from 'lodash'
 import moment from 'moment'
+
+import { staking } from '@coopfi/api/common'
+import { BANX_TOKEN_DECIMALS } from '@coopfi/constants'
+import { ZERO_BN, bnToFixed, bnToHuman } from '@coopfi/utils'
 
 export const calculateAdventureRewards = (
   params: Array<{

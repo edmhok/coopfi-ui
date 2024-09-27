@@ -1,8 +1,9 @@
+import axios from 'axios'
+import { BN } from 'fbonds-core'
+
 import { parseResponseSafe } from '@coopfi/api/shared'
 import { BACKEND_BASE_URL, BANX_TOKEN_DECIMALS } from '@coopfi/constants'
 import { ZERO_BN } from '@coopfi/utils'
-import axios from 'axios'
-import { BN } from 'fbonds-core'
 
 import { BanxStakingInfoSchema, BanxStakingSettingsSchema } from './schemas'
 import { BanxStakingInfo, BanxStakingSettings } from './types'

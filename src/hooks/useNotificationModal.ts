@@ -1,9 +1,11 @@
 import { useEffect } from 'react'
 
-import { notifications } from '@coopfi/api/common'
-import { NotificationModal } from '@coopfi/components/modals'
-import { useModal } from '@coopfi/store/common'
 import { useQuery } from '@tanstack/react-query'
+
+import { NotificationModal } from '@coopfi/components/modals'
+
+import { notifications } from '@coopfi/api/common'
+import { useModal } from '@coopfi/store/common'
 
 import { useLocalStorage } from './useLocalStorage'
 

@@ -1,7 +1,8 @@
 import { useMemo } from 'react'
 
-import { createEmptySyntheticTokenOffer, useSyntheticTokenOffers } from '@coopfi/store/token'
 import { useWallet } from '@solana/wallet-adapter-react'
+
+import { createEmptySyntheticTokenOffer, useSyntheticTokenOffers } from '@coopfi/store/token'
 
 export const useTokenOffer = (offerPubkey: string, marketPubkey: string) => {
   const { publicKey: walletPubkey } = useWallet()

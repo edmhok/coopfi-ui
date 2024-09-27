@@ -1,8 +1,9 @@
-import { core } from '@coopfi/api/nft'
 import { PUBKEY_PLACEHOLDER } from 'fbonds-core/lib/fbond-protocol/constants'
 import { calculateNextSpotPrice } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import produce from 'immer'
 import { create } from 'zustand'
+
+import { core } from '@coopfi/api/nft'
 
 export interface SyntheticOffer {
   isEdit: boolean //? if offer exits on blochain and in edit mode

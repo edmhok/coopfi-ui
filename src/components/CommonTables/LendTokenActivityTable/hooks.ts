@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react'
 
-import { activity } from '@coopfi/api/tokens'
-import { RBOption } from '@coopfi/components/RadioButton'
-import { useTokenMarketsPreview } from '@coopfi/pages/tokenLending/LendTokenPage'
-import { useTokenType } from '@coopfi/store/common'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { useInfiniteQuery } from '@tanstack/react-query'
+
+import { RBOption } from '@coopfi/components/RadioButton'
+
+import { activity } from '@coopfi/api/tokens'
+import { useTokenMarketsPreview } from '@coopfi/pages/tokenLending/LendTokenPage'
+import { useTokenType } from '@coopfi/store/common'
 
 const PAGINATION_LIMIT = 15
 

@@ -1,5 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
+import { MAX_APR_SPL } from 'fbonds-core/lib/fbond-protocol/constants'
+import { clamp } from 'lodash'
+
 import { TokenMarketPreview } from '@coopfi/api/tokens'
 import { useTokenType } from '@coopfi/store/common'
 import { SyntheticTokenOffer } from '@coopfi/store/token'
@@ -8,8 +11,6 @@ import {
   formatTokensPerCollateralToStr,
   getTokenDecimals,
 } from '@coopfi/utils'
-import { MAX_APR_SPL } from 'fbonds-core/lib/fbond-protocol/constants'
-import { clamp } from 'lodash'
 
 const DEFAULT_APR_PERCENT = 30
 

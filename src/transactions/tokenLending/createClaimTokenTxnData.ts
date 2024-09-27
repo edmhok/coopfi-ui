@@ -1,9 +1,10 @@
-import { core } from '@coopfi/api/tokens'
-import { BONDS } from '@coopfi/constants'
 import { web3 } from 'fbonds-core'
 import { LOOKUP_TABLE } from 'fbonds-core/lib/fbond-protocol/constants'
 import { claimPerpetualLoanV2Spl } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
 import { CreateTxnData, WalletAndConnection } from 'solana-transactions-executor'
+
+import { core } from '@coopfi/api/tokens'
+import { BONDS } from '@coopfi/constants'
 
 import { sendTxnPlaceHolder } from '../helpers'
 

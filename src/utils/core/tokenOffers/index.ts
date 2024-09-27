@@ -1,7 +1,8 @@
-import { convertToDecimalString, formatTrailingZeros } from '@coopfi/utils'
-import { ZERO_BN } from '@coopfi/utils/bn'
 import { BN } from 'fbonds-core'
 import { BondOfferV3 } from 'fbonds-core/lib/fbond-protocol/types'
+
+import { convertToDecimalString, formatTrailingZeros } from '@coopfi/utils'
+import { ZERO_BN } from '@coopfi/utils/bn'
 
 import { isOfferStateClosed } from '../offers'
 

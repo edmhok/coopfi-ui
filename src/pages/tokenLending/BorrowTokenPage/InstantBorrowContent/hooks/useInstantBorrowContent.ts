@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 
+import { BN } from 'fbonds-core'
+
 import { CollateralToken } from '@coopfi/api/tokens'
 import { useTokenType } from '@coopfi/store/common'
 import {
@@ -9,7 +11,6 @@ import {
   stringToBN,
   sumBNs,
 } from '@coopfi/utils'
-import { BN } from 'fbonds-core'
 
 import { BorrowToken } from '../../constants'
 import { getErrorMessage } from '../helpers'

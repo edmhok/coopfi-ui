@@ -1,10 +1,11 @@
 import { useCallback } from 'react'
 
-import { user } from '@coopfi/api/common'
-import { parseBanxLoginJwt } from '@coopfi/utils'
 import { web3 } from 'fbonds-core'
 import moment from 'moment'
 import { create } from 'zustand'
+
+import { user } from '@coopfi/api/common'
+import { parseBanxLoginJwt } from '@coopfi/utils'
 
 const AUTH_MESSAGE = 'Hello! Please sign this message to proceed!'
 

@@ -1,8 +1,9 @@
 import { useMemo } from 'react'
 
+import { chain } from 'lodash'
+
 import { staking } from '@coopfi/api/common'
 import { isAdventureEnded } from '@coopfi/pages/common/AdventuresPage'
-import { chain } from 'lodash'
 
 export const useAdventuresAndSubscriptions = (
   banxStakeInfo: staking.BanxStakingInfo,

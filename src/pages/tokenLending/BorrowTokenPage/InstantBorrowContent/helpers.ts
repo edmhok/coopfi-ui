@@ -1,3 +1,9 @@
+import { BN } from 'fbonds-core'
+import { BASE_POINTS, PROTOCOL_FEE_TOKEN_BN } from 'fbonds-core/lib/fbond-protocol/constants'
+import { calculateCurrentInterestSolPure } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
+import { calcBorrowerTokenAPR } from 'fbonds-core/lib/fbond-protocol/helpers'
+import moment from 'moment'
+
 import { BorrowOffer, CollateralToken } from '@coopfi/api/tokens'
 import { SECONDS_IN_DAY } from '@coopfi/constants'
 import {
@@ -8,11 +14,6 @@ import {
   stringToBN,
   sumBNs,
 } from '@coopfi/utils'
-import { BN } from 'fbonds-core'
-import { BASE_POINTS, PROTOCOL_FEE_TOKEN_BN } from 'fbonds-core/lib/fbond-protocol/constants'
-import { calculateCurrentInterestSolPure } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
-import { calcBorrowerTokenAPR } from 'fbonds-core/lib/fbond-protocol/helpers'
-import moment from 'moment'
 
 interface GetErrorMessageProps {
   collateralToken: CollateralToken | undefined
