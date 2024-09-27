@@ -9,8 +9,8 @@ export const BASE_TENSOR_URL = 'https://www.tensor.trade/'
 export const TENSOR_MARKET_URL = `${BASE_TENSOR_URL}trade/`
 export const TENSOR_BANX_MARKET_URL = `${TENSOR_MARKET_URL}banx/`
 
-export const X_URL = 'https://twitter.com/banx_gg'
-export const GITHUB_URL = 'https://github.com/frakt-solana'
-export const DOCS_URL = 'https://docs.banx.gg/'
+export const X_URL = 'https://twitter.com/'
+export const GITHUB_URL = 'https://github.com/edmhok/coopfi-ui'
+export const DOCS_URL = 'https://docs.gg/'
 
 export const DISCORD_AVATARS_URL = 'https://cdn.discordapp.com/avatars'
