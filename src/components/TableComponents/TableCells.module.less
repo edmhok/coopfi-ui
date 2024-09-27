@@ -1,0 +1,222 @@
+.nftInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nftImageWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.nftImage,
+.selectedCollectionOverlay,
+.nftPlaceholderIcon {
+  height: 32px;
+  width: 32px;
+
+  @media (max-width: 640px) {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.nftPlaceholderIcon {
+  rect {
+    fill: var(--bg-tertiary);
+    stroke: var(--bg-border);
+  }
+  path {
+    fill: var(--bg-border);
+  }
+}
+
+.selectedCollectionOverlay {
+  background-color: var(--accent-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    background: var(--pure-black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 11px;
+  }
+}
+.nftNames {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 2px;
+
+  @media (max-width: 640px) {
+    gap: unset;
+  }
+}
+.nftCollectionName {
+  font: var(--title-sm);
+}
+.ellipsis {
+  max-width: 180px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nftNumber {
+  font: var(--body-text-sm);
+}
+
+.checkbox {
+  height: 18px;
+  padding-left: 18px;
+  margin-right: 8px;
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font: var(--title-sm);
+  gap: 4px;
+
+  @media (max-width: 640px) {
+    font: var(--title-xs);
+  }
+}
+.headerCellLeft {
+  justify-content: flex-start;
+}
+
+.activityTime {
+  color: var(--content-primary);
+  font: var(--body-text-md);
+  text-decoration: underline;
+  white-space: nowrap;
+
+  @media (max-width: 640px) {
+    font: var(--body-text-sm);
+  }
+
+  &:hover {
+    color: var(--content-primary);
+    text-decoration: none;
+  }
+}
+
+.badge {
+  background: var(--additional-green-secondary);
+  border-radius: 100px;
+  color: var(--additional-green-primary-deep);
+  font: var(--body-text-xs);
+  padding: 0 6px;
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  white-space: nowrap;
+  z-index: 1;
+
+  @media (max-width: 640px) {
+    top: -4px;
+  }
+}
+
+.rowCell {
+  &,
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+}
+.rowCellTitle {
+  font: var(--body-text-md);
+
+  @media (max-width: 640px) {
+    font: var(--body-text-sm);
+  }
+
+  span {
+    justify-content: flex-end;
+  }
+
+  &.highlight {
+    color: var(--additional-green-primary-deep);
+  }
+}
+
+.rowCellTooltipIcon svg {
+  fill: var(--content-secondary);
+  width: 13px;
+  height: 13px;
+}
+
+.displayValue {
+  line-height: 1em;
+}
+
+.rarityText {
+  font: var(--body-text-sm);
+  border-radius: 100px;
+  padding: 2px 8px;
+  justify-content: flex-end;
+
+  &.highlight {
+    color: var(--pure-black);
+  }
+}
+
+// * CollateralTokenCell * //
+.collateralTokenCell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collateralTokenContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collateralTokenInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.collateralTokenAmount {
+  color: var(--content-secondary);
+  font: var(--important-text-md);
+
+  @media (max-width: 640px) {
+    font: var(--important-text-sm);
+  }
+}
+
+.collateralTokenTicker {
+  color: var(--content-primary);
+  font: var(--body-text-sm);
+  text-transform: uppercase;
+
+  @media (max-width: 640px) {
+    font: var(--body-text-xs);
+  }
+}
+
+.collateralImage {
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+
+  @media (max-width: 640px) {
+    height: 24px;
+    width: 24px;
+  }
+}
+// * CollateralTokenCell * //

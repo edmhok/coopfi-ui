@@ -1,0 +1,198 @@
+import { core } from '@coopfi/api/nft'
+import { useBanxNotificationsSider } from '@coopfi/components/BanxNotifications'
+import {
+  SubscribeNotificationsModal,
+  createRefinanceSubscribeNotificationsContent,
+  createRefinanceSubscribeNotificationsTitle,
+} from '@coopfi/components/modals'
+import { getDialectAccessToken } from '@coopfi/providers'
+import { useIsLedger, useModal, useTokenType } from '@coopfi/store/common'
+import {
+  TXN_EXECUTOR_DEFAULT_OPTIONS,
+  createExecutorWalletAndConnection,
+  defaultTxnErrorHandler,
+} from '@coopfi/transactions'
+import {
+  CreateLendToBorrowTxnDataParams,
+  createLendToBorrowTxnData,
+} from '@coopfi/transactions/nftLending'
+import {
+  calculateLenderApr,
+  destroySnackbar,
+  enqueueConfirmationError,
+  enqueueSnackbar,
+  enqueueTransactionSent,
+  enqueueTransactionsSent,
+  enqueueWaitingConfirmation,
+  isLoanListed,
+} from '@coopfi/utils'
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
+import { chain, uniqueId } from 'lodash'
+import { TxnExecutor } from 'solana-transactions-executor'
+
+import { useAllLoansRequests } from '../../hooks'
+import { useLoansState } from '../loansState'
+
+export const useInstantTransactions = () => {
+  const wallet = useWallet()
+  const { connection } = useConnection()
+  const { isLedger } = useIsLedger()
+  const { tokenType } = useTokenType()
+
+  const { setVisibility: setBanxNotificationsSiderVisibility } = useBanxNotificationsSider()
+  const { addMints } = useAllLoansRequests()
+  const { open, close } = useModal()
+
+  const { selection, clear: clearSelection, remove: removeSelection } = useLoansState()
+
+  const onSuccess = (loansAmount: number) => {
+    if (!getDialectAccessToken(wallet.publicKey?.toBase58())) {
+      open(SubscribeNotificationsModal, {
+        title: createRefinanceSubscribeNotificationsTitle(loansAmount),
+        message: createRefinanceSubscribeNotificationsContent(),
+        onActionClick: () => {
+          close()
+          setBanxNotificationsSiderVisibility(true)
+        },
+        onCancel: close,
+      })
+    } else {
+      //? Close warning modal
+      close()
+    }
+  }
+
+  const lendToBorrow = async (loan: core.Loan) => {
+    const loadingSnackbarId = uniqueId()
+
+    try {
+      const walletAndConnection = createExecutorWalletAndConnection({ wallet, connection })
+
+      const aprRate = calculateLenderApr(loan)
+
+      const txnData = await createLendToBorrowTxnData(
+        { loan, aprRate, tokenType },
+        walletAndConnection,
+      )
+
+      await new TxnExecutor<CreateLendToBorrowTxnDataParams>(
+        walletAndConnection,
+        TXN_EXECUTOR_DEFAULT_OPTIONS,
+      )
+        .addTxnData(txnData)
+        .on('sentSome', (results) => {
+          results.forEach(({ signature }) => enqueueTransactionSent(signature))
+          enqueueWaitingConfirmation(loadingSnackbarId)
+        })
+        .on('confirmedAll', (results) => {
+          const { confirmed, failed } = results
+
+          destroySnackbar(loadingSnackbarId)
+
+          if (failed.length) {
+            return failed.forEach(({ signature, reason }) =>
+              enqueueConfirmationError(signature, reason),
+            )
+          }
+
+          if (confirmed.length) {
+            return confirmed.forEach(({ params, signature }) => {
+              const isOldLoanListed = isLoanListed(params.loan)
+
+              const message = isOldLoanListed
+                ? 'Loan successfully funded'
+                : 'Loan successfully refinanced'
+
+              enqueueSnackbar({
+                message,
+                type: 'success',
+                solanaExplorerPath: `tx/${signature}`,
+              })
+
+              addMints([loan.nft.mint])
+              removeSelection(loan.publicKey)
+              onSuccess(1)
+            })
+          }
+        })
+        .on('error', (error) => {
+          throw error
+        })
+        .execute()
+    } catch (error) {
+      destroySnackbar(loadingSnackbarId)
+      defaultTxnErrorHandler(error, {
+        additionalData: loan,
+        walletPubkey: wallet?.publicKey?.toBase58(),
+        transactionName: 'LendToBorrow',
+      })
+    }
+  }
+
+  const lendToBorrowAll = async () => {
+    const loadingSnackbarId = uniqueId()
+
+    try {
+      const walletAndConnection = createExecutorWalletAndConnection({ wallet, connection })
+
+      const txnsData = await Promise.all(
+        selection.map((loan) =>
+          createLendToBorrowTxnData(
+            { loan, aprRate: calculateLenderApr(loan), tokenType },
+            walletAndConnection,
+          ),
+        ),
+      )
+
+      await new TxnExecutor<CreateLendToBorrowTxnDataParams>(walletAndConnection, {
+        ...TXN_EXECUTOR_DEFAULT_OPTIONS,
+        chunkSize: isLedger ? 5 : 40,
+      })
+        .addTxnsData(txnsData)
+        .on('sentAll', () => {
+          enqueueTransactionsSent()
+          enqueueWaitingConfirmation(loadingSnackbarId)
+        })
+        .on('confirmedAll', (results) => {
+          const { confirmed, failed } = results
+
+          destroySnackbar(loadingSnackbarId)
+
+          if (confirmed.length) {
+            enqueueSnackbar({ message: 'Loans successfully funded', type: 'success' })
+
+            const mintsToHidden = chain(confirmed)
+              .map(({ params }) => params.loan.nft.mint)
+              .compact()
+              .value()
+
+            addMints(mintsToHidden)
+            clearSelection()
+            onSuccess(mintsToHidden.length)
+          }
+
+          if (failed.length) {
+            return failed.forEach(({ signature, reason }) =>
+              enqueueConfirmationError(signature, reason),
+            )
+          }
+        })
+        .on('error', (error) => {
+          throw error
+        })
+        .execute()
+    } catch (error) {
+      destroySnackbar(loadingSnackbarId)
+      defaultTxnErrorHandler(error, {
+        additionalData: selection,
+        walletPubkey: wallet?.publicKey?.toBase58(),
+        transactionName: 'LendToBorrowAll',
+      })
+    }
+  }
+
+  return {
+    lendToBorrow,
+    lendToBorrowAll,
+  }
+}

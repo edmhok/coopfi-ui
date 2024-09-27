@@ -1,0 +1,107 @@
+.sidebar {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 24px;
+  background: var(--bg-primary);
+
+  @media screen and (max-width: 640px) {
+    padding: 16px;
+  }
+}
+
+.sidebarContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, auto);
+
+  @media screen and (max-width: 1280px) {
+    column-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+  }
+}
+
+.mySquadTitle {
+  @media screen and (max-width: 1280px) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.rewardsTitle {
+  @media screen and (max-width: 1280px) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+.manageNftsSection {
+  margin-bottom: 8px;
+  @media screen and (max-width: 1280px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+.manageTokensSection {
+  margin-bottom: 8px;
+  @media screen and (max-width: 1280px) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+.walletStakedStatsSectionAdditional {
+  border-top: var(--border-less-primary);
+  padding-top: 8px;
+  margin-bottom: 8px;
+  @media screen and (max-width: 1280px) {
+    align-items: flex-start;
+    grid-column: 1;
+    grid-row: 4;
+    margin-bottom: 0;
+  }
+}
+
+.claimSectionAdditional {
+  margin-bottom: 8px;
+  @media screen and (max-width: 1280px) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+.totalClaimedSectionAdditional {
+  border-top: var(--border-less-primary);
+  padding-top: 8px;
+  margin-bottom: 8px;
+  @media screen and (max-width: 1280px) {
+    align-items: flex-start;
+    margin-bottom: 0;
+    grid-column: 2;
+    grid-row: 4;
+  }
+}
+
+.infoSectionAdditional {
+  margin-top: 24px;
+
+  @media screen and (max-width: 1280px) {
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: 640px) {
+    border: unset;
+    border-top: 1px dashed var(--content-secondary);
+
+    p {
+      padding: 8px 16px;
+      border: unset;
+    }
+
+    margin: -16px;
+    margin-top: 16px;
+  }
+}

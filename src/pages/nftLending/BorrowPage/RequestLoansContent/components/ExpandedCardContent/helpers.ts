@@ -1,0 +1,44 @@
+import { BONDS, ONE_WEEK_IN_SECONDS } from '@coopfi/constants'
+import { calculateBorrowValueWithProtocolFee } from '@coopfi/utils'
+import { calculateCurrentInterestSolPure } from 'fbonds-core/lib/fbond-protocol/functions/perpetual'
+import { clamp } from 'lodash'
+import moment from 'moment'
+
+interface CalculateSummaryInfoProps {
+  requestedLoanValue: number
+  totalNftsToRequest: number
+  inputAprValue: string
+  collectionFloor: number
+}
+
+export const calculateSummaryInfo = ({
+  requestedLoanValue,
+  totalNftsToRequest,
+  inputAprValue,
+  collectionFloor,
+}: CalculateSummaryInfoProps) => {
+  const ltv = (requestedLoanValue / collectionFloor) * 100 || 0
+  const totalRequestedLoanValue = requestedLoanValue * totalNftsToRequest
+
+  const upfrontFee =
+    totalRequestedLoanValue - calculateBorrowValueWithProtocolFee(totalRequestedLoanValue)
+
+  const currentTimeUnix = moment().unix()
+  const rateBasePoints = parseFloat(inputAprValue) * 100
+  const weeklyInterest = calculateCurrentInterestSolPure({
+    loanValue: totalRequestedLoanValue,
+    startTime: currentTimeUnix - ONE_WEEK_IN_SECONDS,
+    currentTime: currentTimeUnix,
+    rateBasePoints: rateBasePoints + BONDS.REPAY_FEE_APR,
+  })
+
+  return { ltv, upfrontFee, weeklyInterest }
+}
+
+export const clampInputValue = (value: string, max: number): string => {
+  if (!value) return ''
+
+  const valueToNumber = parseFloat(value)
+  const clampedValue = clamp(valueToNumber, 0, max)
+  return clampedValue.toString()
+}

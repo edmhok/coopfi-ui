@@ -1,0 +1,133 @@
+// * TokenSwitcher * //
+.switcher {
+  background: var(--bg-tertiary);
+  border: var(--border-less-primary);
+  border-radius: 100px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  height: 32px;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.switcherOption {
+  border-radius: 100px;
+  color: var(--content-secondary);
+  padding: 5px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+
+  &.active {
+    background: var(--action-primary);
+    color: var(--content-primary);
+  }
+}
+
+.switcherOptionValue {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.switcherOptionIcon {
+  height: 16px;
+  width: 16px;
+}
+
+.switcherOptionLabel {
+  font: var(--btn-text-md);
+}
+// * TokenSwitcher * //
+
+// * TokenDropdown * //
+.dropdownButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+
+  &.isOpen {
+    border: 1px solid var(--content-primary);
+  }
+
+  span {
+    font: var(--btn-text-sm);
+  }
+
+  svg path {
+    fill: revert-layer;
+  }
+}
+
+.chevronIcon {
+  path {
+    fill: var(--content-primary) !important;
+  }
+
+  &.rotate {
+    transform: rotate(180deg);
+  }
+}
+
+// * TokenDropdown * //
+.dropdown {
+  background: var(--bg-primary);
+  border-bottom: var(--border-primary);
+
+  position: absolute;
+  top: 48px;
+  right: 0;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+
+  padding: 16px;
+  width: 100%;
+}
+
+.dropdownItem {
+  background: var(--bg-tertiary);
+  border: var(--border-primary);
+  border-radius: 100px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 14px;
+  height: 32px;
+
+  svg {
+    min-height: 16px;
+    min-width: 16px;
+  }
+
+  svg path {
+    fill: revert-layer;
+  }
+
+  &.active {
+    background: var(--accent-primary);
+
+    span {
+      color: var(--pure-black);
+    }
+  }
+}
+
+.dropdownItemLabel {
+  font: var(--btn-text-sm);
+}
+// * TokenDropdown * //

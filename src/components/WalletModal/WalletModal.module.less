@@ -1,0 +1,301 @@
+.modal {
+  border: var(--border-primary);
+  border-top: 0;
+  border-right: 0;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background-color: var(--bg-primary);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+  width: 312px;
+  z-index: 100;
+
+  @media (max-width: 767px) {
+    border: 0;
+    border-bottom: var(--border-primary);
+    left: 0;
+    width: 100%;
+  }
+}
+
+.avatar {
+  &,
+  svg,
+  img {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.walletItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 16px;
+}
+
+.walletItem {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  font: var(--btn-text-sm);
+  text-align: center;
+
+  &:hover {
+    background-color: var(--color-dark);
+  }
+}
+.walletItem svg,
+.walletItem img {
+  width: 32px;
+  height: 32px;
+}
+
+.walletIcon path {
+  fill: var(--content-primary);
+}
+
+/* UserInfo Styles */
+
+.userInfoContainer {
+  background-color: var(--primary-background);
+  width: 100%;
+}
+
+// * LenderVaultContent * //
+.lenderVaultContainer {
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 8px -16px 0;
+}
+
+.epochContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  gap: 12px;
+}
+
+.epochStats {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+
+  & > div {
+    justify-content: flex-start;
+    gap: 4px;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    svg path {
+      fill: revert-layer;
+    }
+  }
+}
+
+.lenderValtStatsContainer {
+  border-top: 1px dotted var(--bg-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  width: 100%;
+
+  &.hiddenBorder {
+    border-top: 0;
+  }
+}
+
+.lenderVaultStats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  & > div {
+    gap: 0;
+  }
+}
+
+.claimableValue {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  svg path {
+    fill: revert-layer;
+  }
+}
+
+// * LenderVaultContent * //
+
+// * TooltipContent * //
+.tooltipContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tooltipRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 230px;
+}
+
+.tooltipRowLabel {
+  color: var(--content-secondary);
+  font: var(--title-sm);
+  text-transform: uppercase;
+
+  @media (max-width: 640px) {
+    font: var(--title-xs);
+  }
+}
+
+.tooltipRowValue {
+  font: var(--body-text-md);
+
+  @media (max-width: 640px) {
+    font: var(--body-text-sm);
+  }
+}
+// * TooltipContent * //
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.changeWalletButton,
+.signOutButton {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font: var(--btn-text-sm);
+
+  svg path {
+    fill: var(--content-primary);
+  }
+}
+
+/* UserGeneralInfo Styles */
+
+.userGeneralInfoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userGeneralInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.userAddressSection {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  svg path {
+    fill: var(--content-primary);
+  }
+}
+
+.addressText {
+  color: var(--content-primary);
+  font: var(--btn-text-sm);
+}
+
+.userBalanceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 16px;
+}
+
+.userBalanceInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userBalanceLabel {
+  color: var(--content-secondary);
+  font: var(--title-md);
+  text-transform: uppercase;
+}
+.userBalanceValue {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--content-primary);
+  font: var(--body-text-md);
+}
+
+.userLockedTokens {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.userRewards svg {
+  width: 14px;
+  height: 14px;
+}
+
+// * BalanceContent * //
+.balanceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+}
+
+.balanceLabel {
+  color: var(--content-secondary);
+  font: var(--title-xs);
+  text-align: center;
+  text-transform: uppercase;
+  max-width: 88px;
+}
+
+.balanceContent {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  & > div {
+    gap: 0;
+  }
+}
+
+.verticalLine {
+  background: var(--content-primary);
+  width: 1px;
+  height: 12px;
+}
+.balanceValue {
+  display: flex;
+  align-items: center;
+  font: var(--important-text-md);
+
+  svg path {
+    fill: revert-layer;
+  }
+}
+// * BalanceContent * //

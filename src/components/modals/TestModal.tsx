@@ -1,0 +1,19 @@
+import { FC } from 'react'
+
+import { useModal } from '@coopfi/store/common'
+
+import { Modal } from './BaseModal'
+
+export interface TestModalProps {
+  customText?: string
+}
+
+export const TestModal: FC<TestModalProps> = ({ customText = '' }) => {
+  const { close } = useModal()
+
+  return (
+    <Modal open onCancel={close}>
+      {customText || 'Hello, I am test modal'}
+    </Modal>
+  )
+}

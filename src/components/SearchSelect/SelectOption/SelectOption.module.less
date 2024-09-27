@@ -1,0 +1,66 @@
+.optionWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.optionMainInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addToFavoriteIcon {
+  height: 16px;
+  width: 16px;
+}
+
+.optionLabel {
+  font: var(--title-sm);
+
+  @media (max-width: 640px) {
+    font: var(--title-xs);
+  }
+}
+
+.evenOption {
+  background: var(--bg-secondary);
+}
+
+.imageContainer {
+  position: relative;
+
+  &,
+  img,
+  .selected {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.selected {
+  background-color: var(--accent-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &:after {
+    content: '';
+    display: block;
+    background: var(--pure-black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 11px;
+  }
+}
+
+.additionalValue {
+  font: var(--body-text-md);
+
+  @media (max-width: 640px) {
+    font: var(--body-text-sm);
+  }
+}

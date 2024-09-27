@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  gap: 16px;
+  width: 100%;
+
+  @media (max-width: 960px) {
+    padding: 8px 16px;
+  }
+}
+
+.filterWrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.searchSelect {
+  max-width: 456px;
+}
+
+.filterButton {
+  svg path {
+    fill: var(--additional-orange-primary);
+  }
+
+  &.active {
+    border-color: var(--content-primary);
+  }
+
+  &.disabled {
+    svg path {
+      fill: var(--bg-border-active);
+    }
+  }
+}

@@ -1,0 +1,236 @@
+.card {
+  background: var(--bg-primary);
+  border: var(--border-less-primary);
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer;
+}
+
+.placeOfferContent {
+  padding: 0 24px 24px;
+  cursor: default;
+  width: 100%;
+
+  @media (max-width: 640px) {
+    padding: 0 16px 8px;
+  }
+}
+
+.cardBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 24px;
+  position: relative;
+  width: 100%;
+
+  @media (max-width: 1080px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    padding: 8px 16px;
+  }
+
+  &.active {
+    padding-bottom: 0;
+  }
+}
+
+.editButton {
+  @media (max-width: 960px) {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+
+  @media (max-width: 640px) {
+    top: 16px;
+    right: 16px;
+  }
+
+  &.active {
+    background: var(--accent-secondary);
+  }
+}
+
+/* Main offer overview */
+.mainOfferContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 280px;
+
+  @media (max-width: 640px) {
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+.mainOfferInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media (max-width: 640px) {
+    gap: 2px;
+  }
+}
+.mainOfferStats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+
+  @media (max-width: 640px) {
+    & > div {
+      gap: unset;
+    }
+  }
+}
+.collectionImage {
+  height: 64px;
+  width: 64px;
+
+  @media (max-width: 640px) {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+.collectionInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 1;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.collectionName {
+  font: var(--title-lg);
+  max-width: 290px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  @media (min-width: 961px) and (max-width: 1240px), (max-width: 640px) {
+    max-width: 176px;
+  }
+
+  @media (max-width: 640px) {
+    font: var(--title-md);
+  }
+}
+
+.tensorLink {
+  svg path {
+    fill: var(--content-secondary);
+  }
+
+  &:hover {
+    svg path {
+      fill: var(--content-primary);
+    }
+  }
+}
+
+.actionsOfferButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actionButton {
+  &:disabled {
+    background: var(--bg-tertiary);
+
+    path,
+    rect {
+      fill: var(--content-secondary);
+    }
+  }
+
+  @media (max-width: 640px) {
+    min-height: 24px !important;
+    max-height: 24px !important;
+    min-width: 24px !important;
+    max-width: 24px !important;
+  }
+}
+
+.removeOfferButton {
+  svg {
+    height: 12px !important;
+    width: 12px !important;
+
+    rect {
+      fill: var(--content-primary);
+    }
+  }
+}
+
+/* Aditional offer overview */
+.additionalOfferContainer {
+  @media (max-width: 960px) {
+    justify-content: center;
+    order: 1;
+  }
+
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  width: 100%;
+
+  & > div {
+    align-items: flex-end;
+    white-space: nowrap;
+    max-width: 260px;
+    width: 100%;
+
+    @media (max-width: 1380px) {
+      max-width: 200px;
+    }
+
+    @media (max-width: 1240px) {
+      max-width: 120px;
+    }
+  }
+
+  @media (max-width: 960px) {
+    justify-content: space-between;
+    gap: 0;
+
+    & > div {
+      align-items: flex-start;
+    }
+    & > div:last-child {
+      align-items: flex-end;
+    }
+  }
+}
+.hiddenAdditionalOverview {
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+.additionalStatLabel {
+  color: var(--content-secondary);
+  font: var(--title-md);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  @media (max-width: 640px) {
+    font: var(--title-sm);
+  }
+}
