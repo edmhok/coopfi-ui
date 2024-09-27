@@ -8,7 +8,7 @@ import { WalletItem } from '@coopfi/components/WalletModal'
 import { Modal } from '@coopfi/components/modals/BaseModal'
 
 import BanxImage from '@coopfi/assets/BanxUrban1.png'
-import GreenGridBg from '@coopfi/assets/GreenGridBg.png'
+import CoopfiBg from '@coopfi/assets/CoopfiBg.png'
 import {
   extractReferralCodeFromPath,
   useDebounceValue,
@@ -66,9 +66,9 @@ const RefferralModal = () => {
       <div className={styles.content}>
         <div
           className={styles.referralModalContent}
-          style={{ backgroundImage: `url(${GreenGridBg})` }}
+          style={{ backgroundImage: `url(${CoopfiBg})` }}
         >
-          <h4 className={styles.title}>Welcome to Banx</h4>
+          <h4 className={styles.title}>Welcome to CoopFi</h4>
           <span className={styles.subtitle}>
             Banx is pioneering the NFT lending space on Solana as the only perpetual P2P NFT lending
             protocol, offering a true DeFi lending experience
